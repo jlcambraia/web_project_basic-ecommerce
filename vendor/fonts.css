@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Saira Stencil One";
+  src: url(../vendor/fonts/SairaStencilOne-Regular.ttf) format("ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Saira";
+  src: url(../vendor/fonts/Saira-SemiBold.ttf) format("ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Saira";
+  src: url(../vendor/fonts/Saira-Medium.ttf) format("ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Saira";
+  src: url(../vendor/fonts/Saira-Regular.ttf) format("ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Saira";
+  src: url(../vendor/fonts/Saira-Light.ttf) format("ttf");
+  font-weight: 300;
+}
