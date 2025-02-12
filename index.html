@@ -18,10 +18,40 @@
   </head>
   <body>
     <div class="page">
-      <header class="header"></header>
-      <main class="content"></main>
+      <header class="header">
+        <div class="header__container">
+          <h1 class="header__logo">Capputeeno</h1>
+          <div class="header__actions">
+            <form class="header__form">
+              <div class="header__search-container">
+                <input
+                  type="text"
+                  class="header__search"
+                  placeholder="Procurando por algo específico?"
+                />
+                <img
+                  src="./images/search-loupe.svg"
+                  alt="Ícone de busca"
+                  class="header__search-icon"
+                />
+              </div>
+            </form>
+            <div class="header__cart-container">
+              <img
+                src="./images/shopping-bag.svg"
+                alt="Ícone de bolsa para carrinho de compras"
+                class="header__cart-icon"
+              />
+              <div class="header__cart-quantity-container">
+                <p class="header__cart-quantity">0</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="content"><div class="content__container"></div></main>
       <footer class="footer">
-        <p class="footer__copyright">&copy; 2024. João Luiz Cambraia</p>
+        <!-- <p class="footer__copyright">&copy; 2024. João Luiz Cambraia</p> -->
       </footer>
     </div>
   </body>

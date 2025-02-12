@@ -1,7 +1,7 @@
 .page {
-  max-width: 1280px;
-  width: 90%;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: "Saira", Arial, sans-serif;
   font-weight: 400;
   font-size: 14px;

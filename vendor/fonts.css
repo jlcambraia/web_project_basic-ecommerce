@@ -1,7 +1,7 @@
 @font-face {
-  font-family: "Saira Stencil One";
+  font-family: "Stencil";
   src: url(../vendor/fonts/SairaStencilOne-Regular.ttf) format("ttf");
-  font-weight: normal;
+  font-weight: 400;
 }
 
 @font-face {
