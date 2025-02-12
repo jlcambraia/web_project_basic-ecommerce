@@ -1,17 +1,9 @@
 @import url(../vendor/normalize.css);
 
-/* @import url(../vendor/fonts.css);
+@import url(../vendor/fonts.css);
 
-@import url(../blocks/wrapper.css);
+@import url(../blocks/globals.css);
 
 @import url(../blocks/page.css);
 
 @import url(../blocks/header.css);
-
-@import url(../blocks/intro.css);
-
-@import url(../blocks/photo-grid.css);
-
-@import url(../blocks/places.css);
-
-@import url(../blocks/footer.css); */
