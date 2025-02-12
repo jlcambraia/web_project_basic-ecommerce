@@ -4,6 +4,8 @@
 
 @import url(../blocks/globals.css);
 
+@import url(../blocks/wrapper.css);
+
 @import url(../blocks/page.css);
 
 @import url(../blocks/header.css);
