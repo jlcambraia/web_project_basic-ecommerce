@@ -1,0 +1,79 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  height: 144px;
+}
+
+.filter__by-products-and-classify {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.filter__by-products {
+  width: 408px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter__products {
+  border: none;
+  color: #737380;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding-bottom: 4px;
+}
+
+.filter__products_focus {
+  font-weight: 600;
+  color: #41414d;
+  border-bottom: 4px solid #ffa585;
+}
+
+.filter__classify {
+  width: 121px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+.filter__classify-text {
+  color: #737380;
+}
+
+.filter__classify-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.filter__pagination {
+  display: flex;
+  margin-top: 24px;
+  width: 244px;
+  justify-content: flex-end;
+}
+
+.filter__pagination-button {
+  border: none;
+  width: 32px;
+  height: 32px;
+  background-color: #e9e9f0;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #737380;
+}
+
+.filter__pagination-button_focus {
+  border: 1px solid #ffa585;
+  color: #ffa585;
+  background-color: #f5f5fa;
+}
+
+.filter__pagination-arrows {
+  margin-left: 8px;
+}
