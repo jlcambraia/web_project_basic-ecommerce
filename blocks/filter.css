@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  height: 144px;
+  height: 80px;
 }
 
 .filter__by-products-and-classify {
@@ -72,31 +72,4 @@
   border: none;
   background-color: #fff;
   color: #737380;
-}
-
-.filter__pagination {
-  display: flex;
-  margin-top: 24px;
-  width: 244px;
-  justify-content: flex-end;
-}
-
-.filter__pagination-button {
-  border: none;
-  width: 32px;
-  height: 32px;
-  background-color: #e9e9f0;
-  border-radius: 8px;
-  font-size: 16px;
-  color: #737380;
-}
-
-.filter__pagination-button_focus {
-  border: 1px solid #ffa585;
-  color: #ffa585;
-  background-color: #f5f5fa;
-}
-
-.filter__pagination-arrows {
-  margin-left: 8px;
 }
