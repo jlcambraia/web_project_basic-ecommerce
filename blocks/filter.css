@@ -51,6 +51,29 @@
   height: 24px;
 }
 
+.filter__classify-popup {
+  width: 176px;
+  position: absolute;
+  top: 25px;
+  right: 0;
+  background-color: #fff;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 16px;
+  row-gap: 15px;
+}
+
+.filter__classify-popup_hidden {
+  display: none;
+}
+
+.filter__classify-popup-button {
+  border: none;
+  background-color: #fff;
+  color: #737380;
+}
+
 .filter__pagination {
   display: flex;
   margin-top: 24px;
