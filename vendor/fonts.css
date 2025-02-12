@@ -1,29 +1,29 @@
 @font-face {
   font-family: "Stencil";
-  src: url(../vendor/fonts/SairaStencilOne-Regular.ttf) format("ttf");
+  src: url(../vendor/fonts/SairaStencilOne-Regular.ttf);
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Saira";
-  src: url(../vendor/fonts/Saira-SemiBold.ttf) format("ttf");
+  src: url(../vendor/fonts/Saira-SemiBold.ttf);
   font-weight: 600;
 }
 
 @font-face {
   font-family: "Saira";
-  src: url(../vendor/fonts/Saira-Medium.ttf) format("ttf");
+  src: url(../vendor/fonts/Saira-Medium.ttf);
   font-weight: 500;
 }
 
 @font-face {
   font-family: "Saira";
-  src: url(../vendor/fonts/Saira-Regular.ttf) format("ttf");
+  src: url(../vendor/fonts/Saira-Regular.ttf);
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Saira";
-  src: url(../vendor/fonts/Saira-Light.ttf) format("ttf");
+  src: url(../vendor/fonts/Saira-Light.ttf);
   font-weight: 300;
 }
