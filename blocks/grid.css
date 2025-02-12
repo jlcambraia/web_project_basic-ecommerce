@@ -1,0 +1,56 @@
+.grid {
+  display: grid;
+}
+
+.grid__container {
+  width: 100%;
+  box-sizing: content-box;
+}
+
+.grid__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px 32px;
+}
+
+.grid__card {
+  width: 296px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.grid__card-image {
+  width: 100%;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.grid__card-footer {
+  padding: 14px;
+}
+
+.grid__card-description {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dce2e5;
+}
+
+.grid__card-price {
+  color: #09090a;
+  font-weight: 600;
+  padding-top: 10px;
+}
+
+.grid__card-price::before {
+  content: "R$ ";
+}
+
+.grid__card-price::after {
+  content: ",00 ";
+}
