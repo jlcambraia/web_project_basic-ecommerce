@@ -5,6 +5,7 @@
 .grid__container {
   width: 100%;
   box-sizing: content-box;
+  margin-bottom: 74px;
 }
 
 .grid__cards {
