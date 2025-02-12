@@ -4,7 +4,6 @@
 
 .grid__container {
   width: 100%;
-  box-sizing: content-box;
   margin-bottom: 74px;
 }
 
@@ -15,18 +14,19 @@
 }
 
 .grid__card {
-  width: 296px;
+  width: 256px;
   background-color: #fff;
   border-radius: 8px;
 }
 
 .grid__card-image {
-  width: 100%;
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
   background-position: center;
-  background-size: cover;
   background-repeat: no-repeat;
+  object-fit: cover;
+  height: 300px;
+  width: 100%;
   display: block;
 }
 
