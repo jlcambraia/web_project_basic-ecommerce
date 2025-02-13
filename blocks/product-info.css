@@ -10,7 +10,7 @@
   display: block;
 }
 
-.product-info-text-and-button-container {
+.product-info-description-and-button-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
