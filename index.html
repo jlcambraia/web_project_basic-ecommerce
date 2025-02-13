@@ -51,210 +51,219 @@
       </header>
       <main class="content">
         <div class="content__container">
-          <section class="filter">
-            <div class="filter__by-products-and-classify">
-              <div class="filter__by-products">
-                <button class="filter__products filter__products_focus">
-                  Todos os produtos
-                </button>
-                <button class="filter__products">Camisetas</button>
-                <button class="filter__products">Canecas</button>
-              </div>
-              <div class="filter__classify">
-                <p class="filter__classify-text">Organizar por</p>
-                <img
-                  src="./images/filter-arrow-bottom.svg"
-                  alt="Ícone de seta para baixo"
-                  class="filter__classify-icon"
-                />
-                <div
-                  class="filter__classify-popup filter__classify-popup_hidden"
-                >
-                  <button class="filter__classify-popup-button">
-                    Nome: Maior - menor
+          <div class="content__main-page">
+            <section class="filter">
+              <div class="filter__by-products-and-classify">
+                <div class="filter__by-products">
+                  <button class="filter__products filter__products_focus">
+                    Todos os produtos
                   </button>
-                  <button class="filter__classify-popup-button">
-                    Nome: Menor - maior
-                  </button>
-                  <button class="filter__classify-popup-button">
-                    Preço: Maior - menor
-                  </button>
-                  <button class="filter__classify-popup-button">
-                    Preço: Menor - maior
-                  </button>
+                  <button class="filter__products">Camisetas</button>
+                  <button class="filter__products">Canecas</button>
                 </div>
-              </div>
-            </div>
-          </section>
-          <section class="pagination">
-            <div class="pagination__container">
-              <div class="pagination__buttons pagination__buttons_type_number">
-                <button class="pagination__button pagination__button_focus">
-                  1
-                </button>
-                <button class="pagination__button">2</button>
-              </div>
-              <div class="pagination__buttons pagination__buttons_type_arrow">
-                <img
-                  src="./images/filter-arrow-left.svg"
-                  alt="Ícone de seta para a esquerda"
-                  class="pagination__button pagination__button_left_arrow"
-                />
-                <img
-                  src="./images/filter-arrow-right.svg"
-                  alt="Ícone de seta para a direita"
-                  class="pagination__button pagination__button_right_arrow"
-                />
-              </div>
-            </div>
-          </section>
-          <section class="grid">
-            <div class="grid__container">
-              <div class="grid__cards">
-                <div class="grid__card">
+                <div class="filter__classify">
+                  <p class="filter__classify-text">Organizar por</p>
                   <img
-                    src="./images/caneca1.png"
-                    alt="Figura de uma caneca de cerâmica"
-                    class="grid__card-image"
+                    src="./images/filter-arrow-bottom.svg"
+                    alt="Ícone de seta para baixo"
+                    class="filter__classify-icon"
                   />
-                  <div class="grid__card-footer">
-                    <p class="grid__card-description">
-                      Caneca de cerâmica rústica
-                    </p>
-                    <p class="grid__card-price">40</p>
-                  </div>
-                </div>
-                <div class="grid__card">
-                  <img
-                    src="./images/camisa1.png"
-                    alt="Figura de uma camisa vermelha"
-                    class="grid__card-image"
-                  />
-                  <div class="grid__card-footer">
-                    <p class="grid__card-description">
-                      Caneca de cerâmica rústica
-                    </p>
-                    <p class="grid__card-price">40</p>
-                  </div>
-                </div>
-                <div class="grid__card">
-                  <img
-                    src="./images/caneca2.png"
-                    alt="Figura de uma caneca preta"
-                    class="grid__card-image"
-                  />
-                  <div class="grid__card-footer">
-                    <p class="grid__card-description">
-                      Caneca de cerâmica rústica
-                    </p>
-                    <p class="grid__card-price">40</p>
-                  </div>
-                </div>
-                <div class="grid__card">
-                  <img
-                    src="./images/camisa2.png"
-                    alt="Figura de uma camisa preta"
-                    class="grid__card-image"
-                  />
-                  <div class="grid__card-footer">
-                    <p class="grid__card-description">
-                      Caneca de cerâmica rústica
-                    </p>
-                    <p class="grid__card-price">40</p>
-                  </div>
-                </div>
-                <div class="grid__card">
-                  <img
-                    src="./images/camisa3.png"
-                    alt="Figura de uma caneca camisa branca"
-                    class="grid__card-image"
-                  />
-                  <div class="grid__card-footer">
-                    <p class="grid__card-description">
-                      Caneca de cerâmica rústica
-                    </p>
-                    <p class="grid__card-price">40</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="pagination">
-            <div
-              class="pagination__container pagination__container_position_bottom"
-            >
-              <div class="pagination__buttons pagination__buttons_type_number">
-                <button class="pagination__button pagination__button_focus">
-                  1
-                </button>
-                <button class="pagination__button">2</button>
-              </div>
-              <div class="pagination__buttons pagination__buttons_type_arrow">
-                <img
-                  src="./images/filter-arrow-left.svg"
-                  alt="Ícone de seta para a esquerda"
-                  class="pagination__button pagination__button_left_arrow"
-                />
-                <img
-                  src="./images/filter-arrow-right.svg"
-                  alt="Ícone de seta para a direita"
-                  class="pagination__button pagination__button_right_arrow"
-                />
-              </div>
-            </div>
-          </section>
-          <section class="popups">
-            <div class="popup popup_hidden popup_type_product">
-              <div class="popup__return-button-container">
-                <img
-                  src="./images/popup-return-arrow.svg"
-                  alt="Ícone de seta retornando para trás"
-                  class="popup__return-button-icon"
-                />
-                <p class="popup__return-button-text">Voltar</p>
-              </div>
-              <div class="popup__product-container">
-                <div class="popup__product-image-container">
-                  <img
-                    class="popup__product-image"
-                    src="./images/caneca1.png"
-                    alt="Foto de uma caneca de cerâmica"
-                  />
-                </div>
-                <div class="popup__product-info-container">
-                  <div class="popup__product-info-text-container">
-                    <p class="popup__product-tag">Caneca</p>
-                    <h2 class="popup__product-name">
-                      Caneca de cerâmica rústica
-                    </h2>
-                    <p class="popup__product-price">40</p>
-                    <p class="popup__product-freight-information">
-                      *Frete de R$40,00 para todo o Brasil. Grátis para compras
-                      acima de R$900,00.
-                    </p>
-                    <h3 class="popup__description-title">Descrição</h3>
-                    <p class="popup__description">
-                      Aqui vem um texto descritivo do produto, esta caixa de
-                      texto servirá apenas de exemplo para que simule algum
-                      texto que venha a ser inserido nesse campo, descrevendo
-                      tal produto.
-                    </p>
-                  </div>
-
-                  <div class="popup__product-add-to-cart-container">
-                    <img
-                      src="./images/add-to-cart-shopping-bag.svg"
-                      alt="Ícone de bag para adicionar ao carrinho"
-                      class="popup__product-add-to-cart-icon"
-                    />
-                    <button class="popup__product-add-to-cart-button">
-                      Adicionar ao carrinho
+                  <div
+                    class="filter__classify-popup filter__classify-popup_hidden"
+                  >
+                    <button class="filter__classify-popup-button">
+                      Nome: Maior - menor
+                    </button>
+                    <button class="filter__classify-popup-button">
+                      Nome: Menor - maior
+                    </button>
+                    <button class="filter__classify-popup-button">
+                      Preço: Maior - menor
+                    </button>
+                    <button class="filter__classify-popup-button">
+                      Preço: Menor - maior
                     </button>
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
+            <section class="pagination">
+              <div class="pagination__container">
+                <div
+                  class="pagination__buttons pagination__buttons_type_number"
+                >
+                  <button class="pagination__button pagination__button_focus">
+                    1
+                  </button>
+                  <button class="pagination__button">2</button>
+                </div>
+                <div class="pagination__buttons pagination__buttons_type_arrow">
+                  <img
+                    src="./images/filter-arrow-left.svg"
+                    alt="Ícone de seta para a esquerda"
+                    class="pagination__button pagination__button_left_arrow"
+                  />
+                  <img
+                    src="./images/filter-arrow-right.svg"
+                    alt="Ícone de seta para a direita"
+                    class="pagination__button pagination__button_right_arrow"
+                  />
+                </div>
+              </div>
+            </section>
+            <section class="grid">
+              <div class="grid__container">
+                <div class="grid__cards">
+                  <div class="grid__card">
+                    <img
+                      src="./images/caneca1.png"
+                      alt="Figura de uma caneca de cerâmica"
+                      class="grid__card-image"
+                    />
+                    <div class="grid__card-footer">
+                      <p class="grid__card-description">
+                        Caneca de cerâmica rústica
+                      </p>
+                      <p class="grid__card-price">40</p>
+                    </div>
+                  </div>
+                  <div class="grid__card">
+                    <img
+                      src="./images/camisa1.png"
+                      alt="Figura de uma camisa vermelha"
+                      class="grid__card-image"
+                    />
+                    <div class="grid__card-footer">
+                      <p class="grid__card-description">
+                        Caneca de cerâmica rústica
+                      </p>
+                      <p class="grid__card-price">40</p>
+                    </div>
+                  </div>
+                  <div class="grid__card">
+                    <img
+                      src="./images/caneca2.png"
+                      alt="Figura de uma caneca preta"
+                      class="grid__card-image"
+                    />
+                    <div class="grid__card-footer">
+                      <p class="grid__card-description">
+                        Caneca de cerâmica rústica
+                      </p>
+                      <p class="grid__card-price">40</p>
+                    </div>
+                  </div>
+                  <div class="grid__card">
+                    <img
+                      src="./images/camisa2.png"
+                      alt="Figura de uma camisa preta"
+                      class="grid__card-image"
+                    />
+                    <div class="grid__card-footer">
+                      <p class="grid__card-description">
+                        Caneca de cerâmica rústica
+                      </p>
+                      <p class="grid__card-price">40</p>
+                    </div>
+                  </div>
+                  <div class="grid__card">
+                    <img
+                      src="./images/camisa3.png"
+                      alt="Figura de uma caneca camisa branca"
+                      class="grid__card-image"
+                    />
+                    <div class="grid__card-footer">
+                      <p class="grid__card-description">
+                        Caneca de cerâmica rústica
+                      </p>
+                      <p class="grid__card-price">40</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="pagination">
+              <div
+                class="pagination__container pagination__container_position_bottom"
+              >
+                <div
+                  class="pagination__buttons pagination__buttons_type_number"
+                >
+                  <button class="pagination__button pagination__button_focus">
+                    1
+                  </button>
+                  <button class="pagination__button">2</button>
+                </div>
+                <div class="pagination__buttons pagination__buttons_type_arrow">
+                  <img
+                    src="./images/filter-arrow-left.svg"
+                    alt="Ícone de seta para a esquerda"
+                    class="pagination__button pagination__button_left_arrow"
+                  />
+                  <img
+                    src="./images/filter-arrow-right.svg"
+                    alt="Ícone de seta para a direita"
+                    class="pagination__button pagination__button_right_arrow"
+                  />
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="content__product-page">
+            <section class="popups">
+              <div class="popup popup_hidden popup_type_product">
+                <div class="popup__return-button-container">
+                  <img
+                    src="./images/popup-return-arrow.svg"
+                    alt="Ícone de seta retornando para trás"
+                    class="popup__return-button-icon"
+                  />
+                  <p class="popup__return-button-text">Voltar</p>
+                </div>
+                <div class="popup__product-container">
+                  <div class="popup__product-image-container">
+                    <img
+                      class="popup__product-image"
+                      src="./images/caneca1.png"
+                      alt="Foto de uma caneca de cerâmica"
+                    />
+                  </div>
+                  <div class="popup__product-info-container">
+                    <div class="popup__product-info-text-container">
+                      <p class="popup__product-tag">Caneca</p>
+                      <h2 class="popup__product-name">
+                        Caneca de cerâmica rústica
+                      </h2>
+                      <p class="popup__product-price">40</p>
+                      <p class="popup__product-freight-information">
+                        *Frete de R$40,00 para todo o Brasil. Grátis para
+                        compras acima de R$900,00.
+                      </p>
+                      <h3 class="popup__description-title">Descrição</h3>
+                      <p class="popup__description">
+                        Aqui vem um texto descritivo do produto, esta caixa de
+                        texto servirá apenas de exemplo para que simule algum
+                        texto que venha a ser inserido nesse campo, descrevendo
+                        tal produto.
+                      </p>
+                    </div>
+
+                    <div class="popup__product-add-to-cart-container">
+                      <img
+                        src="./images/add-to-cart-shopping-bag.svg"
+                        alt="Ícone de bag para adicionar ao carrinho"
+                        class="popup__product-add-to-cart-icon"
+                      />
+                      <button class="popup__product-add-to-cart-button">
+                        Adicionar ao carrinho
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="content__cart-page"></div>
         </div>
       </main>
       <footer class="footer">
