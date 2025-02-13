@@ -337,8 +337,10 @@ const baseProducts = [
   // Até aqui coloquei 3 produtos totalmente aleatórios, para criar mais uma página com menos produtos
 ];
 
+// Variáveis
 const gridContainer = document.querySelector(".grid__container");
 
+// Renderiza todos os produtos na tela
 baseProducts.forEach((product) => {
   const cardTemplate = document
     .querySelector("#grid__card")
