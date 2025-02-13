@@ -89,14 +89,15 @@
             </section>
             <section class="pagination">
               <div class="pagination__container">
-                <div
-                  class="pagination__buttons pagination__buttons_type_number"
-                >
-                  <button class="pagination__button pagination__button_focus">
-                    1
-                  </button>
-                  <button class="pagination__button">2</button>
-                </div>
+                <div class="pagination__button-type-number-container"></div>
+                <template id="pagination__buttons">
+                  <div
+                    class="pagination__buttons pagination__buttons_type_number"
+                  >
+                    <button class="pagination__button"></button>
+                  </div>
+                </template>
+
                 <div class="pagination__buttons pagination__buttons_type_arrow">
                   <img
                     src="./images/filter-arrow-left.svg"
