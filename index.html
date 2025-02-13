@@ -51,7 +51,7 @@
       </header>
       <main class="content">
         <div class="content__container">
-          <div class="content__main-page">
+          <!-- <div class="content__main-page">
             <section class="filter">
               <div class="filter__by-products-and-classify">
                 <div class="filter__by-products">
@@ -64,7 +64,7 @@
                 <div class="filter__classify">
                   <p class="filter__classify-text">Organizar por</p>
                   <img
-                    src="./images/filter-arrow-bottom.svg"
+                    src="./images/filter-arrow-down.svg"
                     alt="Ícone de seta para baixo"
                     class="filter__classify-icon"
                   />
@@ -229,8 +229,8 @@
                     alt="Foto de uma caneca de cerâmica"
                   />
                 </div>
-                <div class="product-info-text-and-button-container">
-                  <div class="product-info-text-container">
+                <div class="product-info-description-and-button-container">
+                  <div class="product-info-description-container">
                     <p class="product-info__tag">Caneca</p>
                     <h2 class="product-info__name">
                       Caneca de cerâmica rústica
@@ -261,8 +261,337 @@
                 </div>
               </div>
             </section>
+          </div> -->
+          <div class="content__cart-page">
+            <section class="return">
+              <div class="return__button">
+                <img
+                  src="./images/popup-return-arrow.svg"
+                  alt="Ícone de seta retornando para trás"
+                  class="return__button-icon"
+                />
+                <p class="return__button-text">Voltar</p>
+              </div>
+            </section>
+            <section class="cart">
+              <div class="cart__product-overall-container">
+                <h2 class="cart__title">Seu Carrinho</h2>
+                <div class="cart__total-products-info-container">
+                  <p class="cart__total-products-info-title">Total</p>
+                  <p class="cart__total-products-info-quantity">
+                    <span class="cart__total-products-info-number">0</span>
+                    produtos
+                  </p>
+                  <p class="cart__total-products-info-price">0</p>
+                </div>
+                <div class="cart__products-container">
+                  <div class="cart__product-container">
+                    <div class="cart__product-image-container">
+                      <img
+                        src="./images/caneca1.png"
+                        alt="Foto da caneca"
+                        class="cart__product-image"
+                      />
+                    </div>
+                    <div class="cart__product-description-container">
+                      <div class="cart__product-description-text">
+                        <div class="cart__product-name-and-remove-container">
+                          <h3 class="cart__product-name">
+                            Caneca de cerâmica rústica
+                          </h3>
+                          <button class="cart__product-remove-button">
+                            <img
+                              src="./images/cart-remove-icon.svg"
+                              alt="Ícone de lixeira"
+                              class="cart__product-remove-button-icon"
+                            />
+                          </button>
+                        </div>
+                        <p class="cart__product-description">
+                          Aqui vem um texto descritivo do produto, esta caixa de
+                          texto servirá apenas de exemplo para que simule algum
+                          texto que venha a ser inserido nesse campo,
+                          descrevendo tal produto.
+                        </p>
+                      </div>
+                      <div
+                        class="cart__product-description-select-quantity-and-price"
+                      >
+                        <div class="cart__select-quantity-and-total-container">
+                          <div class="cart__select-quantity">
+                            <div
+                              class="cart__select-quantity-and-arrow-container"
+                            >
+                              <button class="cart__select-quantity-number">
+                                1
+                              </button>
+                              <img
+                                class="cart__select-quantity-number-icon"
+                                src="./images/cart-arrow-down.svg"
+                                alt="Ícone de seta para baixo"
+                              />
+                            </div>
+
+                            <div class="cart__select-quantity-popup">
+                              <button class="cart__select-quantity-number">
+                                2
+                              </button>
+                              <button class="cart__select-quantity-number">
+                                3
+                              </button>
+                              <button class="cart__select-quantity-number">
+                                4
+                              </button>
+                              <button class="cart__select-quantity-number">
+                                5
+                              </button>
+                            </div>
+                          </div>
+                          <p class="cart__total">40</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cart__product-container">
+                    <div class="cart__product-image-container">
+                      <img
+                        src="./images/caneca1.png"
+                        alt="Foto da caneca"
+                        class="cart__product-image"
+                      />
+                    </div>
+                    <div class="cart__product-description-container">
+                      <div class="cart__product-description-text">
+                        <div class="cart__product-name-and-remove-container">
+                          <h3 class="cart__product-name">
+                            Caneca de cerâmica rústica
+                          </h3>
+                          <button class="cart__product-remove-button">
+                            <img
+                              src="./images/cart-remove-icon.svg"
+                              alt="Ícone de lixeira"
+                              class="cart__product-remove-button-icon"
+                            />
+                          </button>
+                        </div>
+                        <p class="cart__product-description">
+                          Aqui vem um texto descritivo do produto, esta caixa de
+                          texto servirá apenas de exemplo para que simule algum
+                          texto que venha a ser inserido nesse campo,
+                          descrevendo tal produto.
+                        </p>
+                      </div>
+                      <div
+                        class="cart__product-description-select-quantity-and-price"
+                      >
+                        <div class="cart__select-quantity-and-total-container">
+                          <div class="cart__select-quantity">
+                            <div
+                              class="cart__select-quantity-and-arrow-container"
+                            >
+                              <button class="cart__select-quantity-number">
+                                1
+                              </button>
+                              <img
+                                class="cart__select-quantity-number-icon"
+                                src="./images/cart-arrow-down.svg"
+                                alt="Ícone de seta para baixo"
+                              />
+                            </div>
+
+                            <div class="cart__select-quantity-popup">
+                              <button class="cart__select-quantity-number">
+                                2
+                              </button>
+                              <button class="cart__select-quantity-number">
+                                3
+                              </button>
+                              <button class="cart__select-quantity-number">
+                                4
+                              </button>
+                              <button class="cart__select-quantity-number">
+                                5
+                              </button>
+                            </div>
+                          </div>
+                          <p class="cart__total">40</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cart__product-container">
+                    <div class="cart__product-image-container">
+                      <img
+                        src="./images/caneca1.png"
+                        alt="Foto da caneca"
+                        class="cart__product-image"
+                      />
+                    </div>
+                    <div class="cart__product-description-container">
+                      <div class="cart__product-description-text">
+                        <div class="cart__product-name-and-remove-container">
+                          <h3 class="cart__product-name">
+                            Caneca de cerâmica rústica
+                          </h3>
+                          <button class="cart__product-remove-button">
+                            <img
+                              src="./images/cart-remove-icon.svg"
+                              alt="Ícone de lixeira"
+                              class="cart__product-remove-button-icon"
+                            />
+                          </button>
+                        </div>
+                        <p class="cart__product-description">
+                          Aqui vem um texto descritivo do produto, esta caixa de
+                          texto servirá apenas de exemplo para que simule algum
+                          texto que venha a ser inserido nesse campo,
+                          descrevendo tal produto.
+                        </p>
+                      </div>
+                      <div
+                        class="cart__product-description-select-quantity-and-price"
+                      >
+                        <div class="cart__select-quantity-and-total-container">
+                          <div class="cart__select-quantity">
+                            <div
+                              class="cart__select-quantity-and-arrow-container"
+                            >
+                              <button class="cart__select-quantity-number">
+                                1
+                              </button>
+                              <img
+                                class="cart__select-quantity-number-icon"
+                                src="./images/cart-arrow-down.svg"
+                                alt="Ícone de seta para baixo"
+                              />
+                            </div>
+
+                            <div class="cart__select-quantity-popup">
+                              <button class="cart__select-quantity-number">
+                                2
+                              </button>
+                              <button class="cart__select-quantity-number">
+                                3
+                              </button>
+                              <button class="cart__select-quantity-number">
+                                4
+                              </button>
+                              <button class="cart__select-quantity-number">
+                                5
+                              </button>
+                            </div>
+                          </div>
+                          <p class="cart__total">40</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cart__product-container">
+                    <div class="cart__product-image-container">
+                      <img
+                        src="./images/caneca1.png"
+                        alt="Foto da caneca"
+                        class="cart__product-image"
+                      />
+                    </div>
+                    <div class="cart__product-description-container">
+                      <div class="cart__product-description-text">
+                        <div class="cart__product-name-and-remove-container">
+                          <h3 class="cart__product-name">
+                            Caneca de cerâmica rústica
+                          </h3>
+                          <button class="cart__product-remove-button">
+                            <img
+                              src="./images/cart-remove-icon.svg"
+                              alt="Ícone de lixeira"
+                              class="cart__product-remove-button-icon"
+                            />
+                          </button>
+                        </div>
+                        <p class="cart__product-description">
+                          Aqui vem um texto descritivo do produto, esta caixa de
+                          texto servirá apenas de exemplo para que simule algum
+                          texto que venha a ser inserido nesse campo,
+                          descrevendo tal produto.
+                        </p>
+                      </div>
+                      <div
+                        class="cart__product-description-select-quantity-and-price"
+                      >
+                        <div class="cart__select-quantity-and-total-container">
+                          <div class="cart__select-quantity">
+                            <div
+                              class="cart__select-quantity-and-arrow-container"
+                            >
+                              <button class="cart__select-quantity-number">
+                                1
+                              </button>
+                              <img
+                                class="cart__select-quantity-number-icon"
+                                src="./images/cart-arrow-down.svg"
+                                alt="Ícone de seta para baixo"
+                              />
+                            </div>
+
+                            <div class="cart__select-quantity-popup">
+                              <button class="cart__select-quantity-number">
+                                2
+                              </button>
+                              <button class="cart__select-quantity-number">
+                                3
+                              </button>
+                              <button class="cart__select-quantity-number">
+                                4
+                              </button>
+                              <button class="cart__select-quantity-number">
+                                5
+                              </button>
+                            </div>
+                          </div>
+                          <p class="cart__total">40</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cart__summary-container">
+                <div class="cart__summary-info">
+                  <h2 class="cart__summary-title">Resumo do pedido</h2>
+                  <div class="cart__subinfo-container">
+                    <p class="cart__subinfo-text">Subtotal de produtos</p>
+                    <p class="cart__subinfo-value">160</p>
+                  </div>
+                  <div
+                    class="cart__subinfo-container cart__subinfo-container_padding_m"
+                  >
+                    <p class="cart__subinfo-text">Entrega</p>
+                    <p class="cart__subinfo-value">40</p>
+                  </div>
+                  <div
+                    class="cart__subinfo-container cart__subinfo-container_margin_l"
+                  >
+                    <p class="cart__subinfo-text cart__subinfo-text_bold">
+                      Total
+                    </p>
+                    <p class="cart__subinfo-value cart__subinfo-value_bold">
+                      201
+                    </p>
+                  </div>
+                  <button class="cart__complete-the-purchase-button">
+                    Finalizar a compra
+                  </button>
+                </div>
+                <div class="cart__summary-faq">
+                  <p class="cart__summmary-faq-text">Ajuda</p>
+                  <p class="cart__summmary-faq-text">Reembolsos</p>
+                  <p class="cart__summmary-faq-text">Entregas e frete</p>
+                  <p class="cart__summmary-faq-text">Trocas e devoluções</p>
+                </div>
+              </div>
+            </section>
           </div>
-          <div class="content__cart-page"></div>
         </div>
       </main>
       <footer class="footer">
