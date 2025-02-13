@@ -1,5 +1,5 @@
 .grid {
-  display: grid;
+  display: flex;
 }
 
 .grid__container {
@@ -8,8 +8,8 @@
 }
 
 .grid__cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 24px 32px;
 }
 
