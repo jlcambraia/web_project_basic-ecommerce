@@ -13,4 +13,21 @@
 
 .content__product-page {
   height: 87.3vh;
+  z-index: 1;
+}
+
+.content__product-page_hidden {
+  display: none;
+}
+
+.content__product-page_hidden {
+  display: none;
+}
+
+.content__cart-page {
+  z-index: 2;
+}
+
+.content__cart-page_hidden {
+  display: none;
 }
