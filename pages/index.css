@@ -16,6 +16,8 @@
 
 @import url(../blocks/grid.css);
 
-@import url(../blocks/popups.css);
+@import url(../blocks/return.css);
+
+@import url(../blocks/product-info.css);
 
 @import url(../blocks/footer.css);

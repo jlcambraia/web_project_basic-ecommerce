@@ -1,0 +1,20 @@
+.return {
+  height: 71px;
+  display: flex;
+  align-items: center;
+}
+
+.return__button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.return__button-icon {
+  width: 24px;
+}
+
+.return__button-text {
+  font-weight: 500;
+  color: #617480;
+}

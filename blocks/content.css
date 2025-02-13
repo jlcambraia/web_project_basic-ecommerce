@@ -4,10 +4,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 .content__container {
   width: 90%;
   max-width: 1120px;
+}
+
+.content__product-page {
+  height: 87.3vh;
 }
