@@ -338,10 +338,26 @@ const baseProducts = [
 ];
 
 // Variáveis
-const gridContainer = document.querySelector(".grid__container");
+const grid = document.querySelector(".grid");
+
+// Cria o primeiro gridContainerTemplate
+let gridContainerTemplate = document
+  .querySelector("#grid__container")
+  .content.querySelector(".grid__container")
+  .cloneNode(true);
 
 // Renderiza todos os produtos na tela
-baseProducts.forEach((product) => {
+baseProducts.forEach((product, index) => {
+  if (index % 12 === 0) {
+    // A cada 12 produtos, cria um novo gridContainerTemplate
+    gridContainerTemplate = document
+      .querySelector("#grid__container")
+      .content.querySelector(".grid__container")
+      .cloneNode(true);
+    gridContainerTemplate.classList.add("grid__container_hidden");
+    grid.append(gridContainerTemplate); // Adiciona o novo container ao grid
+  }
+
   const cardTemplate = document
     .querySelector("#grid__card")
     .content.querySelector(".grid__card")
@@ -355,5 +371,11 @@ baseProducts.forEach((product) => {
   cardName.textContent = product.name;
   cardPrice.textContent = product.price;
 
-  gridContainer.prepend(cardTemplate);
+  // Adiciona o card ao container
+  // A cada 12 cards, como é criado um novo container, o próximo produto será adicionado ao novo container
+  gridContainerTemplate.append(cardTemplate);
 });
+
+// Mostra o primeiro container da lista
+const gridContainers = document.querySelectorAll(".grid__container");
+gridContainers[0].classList.remove("grid__container_hidden");

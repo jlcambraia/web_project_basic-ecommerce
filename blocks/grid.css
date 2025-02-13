@@ -10,6 +10,10 @@
   gap: 24px 32px;
 }
 
+.grid__container_hidden {
+  display: none;
+}
+
 .grid__card {
   width: 256px;
   background-color: #fff;
