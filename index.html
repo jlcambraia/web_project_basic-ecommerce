@@ -112,19 +112,16 @@
               </div>
             </section>
             <section class="grid">
-              <div class="grid__container">
-                <ul class="grid__cards">
-                  <template class="grid__card">
-                    <li class="grid__card">
-                      <img src="#" alt="#" class="grid__card-image" />
-                      <div class="grid__card-footer">
-                        <p class="grid__card-description"></p>
-                        <p class="grid__card-price"></p>
-                      </div>
-                    </li>
-                  </template>
-                </ul>
-              </div>
+              <div class="grid__container"></div>
+              <template id="grid__card">
+                <div class="grid__card">
+                  <img src="#" alt="" class="grid__card-image" />
+                  <div class="grid__card-footer">
+                    <p class="grid__card-name"></p>
+                    <p class="grid__card-price"></p>
+                  </div>
+                </div>
+              </template>
             </section>
             <section class="pagination">
               <div
@@ -544,6 +541,7 @@
         </p>
       </footer>
     </div>
+    <script src="./scripts/utils.js"></script>
     <script src="./pages/index.js"></script>
   </body>
 </html>
