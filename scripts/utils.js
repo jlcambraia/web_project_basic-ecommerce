@@ -1,151 +1,199 @@
 const baseProducts = [
   {
     name: "Caneca de cerâmica rústica",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/caneca1.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca1.jpg",
+    price: 40,
     category: "mugs",
   },
   {
     name: "Camiseta not today.",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/camisa1.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa1.jpg",
+    price: 78,
     category: "t-shirts",
   },
   {
     name: "Caneca Black Ring",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/caneca2.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca2.jpg",
+    price: 32,
     category: "mugs",
   },
   {
     name: "Camiseta Broken Saints",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/camisa2.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa2.jpg",
+    price: 58,
     category: "t-shirts",
   },
   {
     name: "Camiseta Outcast",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/camisa3.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa3.jpg",
+    price: 89,
     category: "t-shirts",
   },
   {
     name: "Caneca The Grounds",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/caneca3.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca3.jpg",
+    price: 85,
     category: "mugs",
   },
   {
     name: "Camiseta evening",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/camisa4.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa4.jpg",
+    price: 69,
     category: "t-shirts",
   },
   {
     name: "Caneca preto fosco",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/caneca4.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca4.jpg",
+    price: 28,
     category: "mugs",
   },
   {
     name: "Caneca Never settle",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/caneca5.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca5.jpg",
+    price: 43,
     category: "mugs",
   },
   {
     name: "Camiseta DREAMER",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/camisa5.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa5.jpg",
+    price: 55,
     category: "t-shirts",
   },
   {
     name: "Caneca Decaf! P&Co",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/caneca6.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca6.jpg",
+    price: 32,
     category: "mugs",
   },
   {
     name: "Camiseta Ramones",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/camisa6.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa6.jpg",
+    price: 92,
     category: "t-shirts",
   },
 
   // Até aqui, é a lista original
 
   {
-    name: "Camiseta Ramones",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/camisa6.jpg",
-    category: "t-shirts",
+    name: "Caneca Decaf! P&Co",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca6.jpg",
+    price: 32,
+    category: "mugs",
   },
 
   {
-    name: "Caneca Decaf! P&Co",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/caneca6.jpg",
-    category: "mugs",
-  },
-  {
-    name: "Camiseta DREAMER",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/camisa5.jpg",
-    category: "t-shirts",
-  },
-  {
     name: "Caneca Never settle",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/caneca5.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca5.jpg",
+    price: 43,
     category: "mugs",
   },
   {
     name: "Caneca preto fosco",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/caneca4.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca4.jpg",
+    price: 28,
     category: "mugs",
   },
   {
+    name: "Camiseta Ramones",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa6.jpg",
+    price: 92,
+    category: "t-shirts",
+  },
+  {
     name: "Camiseta evening",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/camisa4.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa4.jpg",
+    price: 69,
     category: "t-shirts",
   },
   {
     name: "Caneca The Grounds",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/caneca3.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca3.jpg",
+    price: 85,
     category: "mugs",
   },
   {
     name: "Camiseta Outcast",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/camisa3.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa3.jpg",
+    price: 89,
+    category: "t-shirts",
+  },
+  {
+    name: "Camiseta DREAMER",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa5.jpg",
+    price: 55,
     category: "t-shirts",
   },
   {
     name: "Camiseta Broken Saints",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/camisa2.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa2.jpg",
+    price: 58,
     category: "t-shirts",
   },
   {
     name: "Caneca Black Ring",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/caneca2.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca2.jpg",
+    price: 32,
     category: "mugs",
   },
   {
     name: "Camiseta not today.",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/camisa1.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa1.jpg",
+    price: 78,
     category: "t-shirts",
   },
 
   {
     name: "Caneca de cerâmica rústica",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/caneca1.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca1.jpg",
+    price: 40,
     category: "mugs",
   },
 
@@ -153,85 +201,107 @@ const baseProducts = [
 
   {
     name: "Camiseta evening",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/camisa4.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa4.jpg",
+    price: 69,
     category: "t-shirts",
   },
 
   {
     name: "Caneca Never settle",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/caneca5.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca5.jpg",
+    price: 43,
     category: "mugs",
   },
 
   {
     name: "Caneca Black Ring",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/caneca2.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca2.jpg",
+    price: 32,
     category: "mugs",
   },
 
   {
     name: "Caneca The Grounds",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/caneca3.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca3.jpg",
+    price: 85,
     category: "mugs",
   },
 
   {
     name: "Camiseta Broken Saints",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/camisa2.jpg",
-    category: "t-shirts",
-  },
-
-  {
-    name: "Camiseta DREAMER",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/camisa5.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa2.jpg",
+    price: 58,
     category: "t-shirts",
   },
 
   {
     name: "Caneca preto fosco",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/caneca4.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca4.jpg",
+    price: 28,
     category: "mugs",
   },
 
   {
     name: "Caneca de cerâmica rústica",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/caneca1.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca1.jpg",
+    price: 40,
     category: "mugs",
   },
 
   {
     name: "Camiseta Ramones",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/camisa6.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa6.jpg",
+    price: 92,
     category: "t-shirts",
   },
-
+  {
+    name: "Camiseta DREAMER",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa5.jpg",
+    price: 55,
+    category: "t-shirts",
+  },
   {
     name: "Camiseta Outcast",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/camisa3.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa3.jpg",
+    price: 89,
     category: "t-shirts",
   },
 
   {
     name: "Caneca Decaf! P&Co",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/caneca6.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca6.jpg",
+    price: 32,
     category: "mugs",
   },
 
   {
     name: "Camiseta not today.",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/camisa1.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa1.jpg",
+    price: 78,
     category: "t-shirts",
   },
 
@@ -239,24 +309,49 @@ const baseProducts = [
 
   {
     name: "Caneca The Grounds",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/caneca3.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca3.jpg",
+    price: 85,
     category: "mugs",
   },
 
   {
     name: "Caneca Never settle",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/caneca5.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca5.jpg",
+    price: 43,
     category: "mugs",
   },
 
   {
     name: "Camiseta Broken Saints",
-    description: faker.lorem.paragraph(),
-    image_src: "./image/camisa2.jpg",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa2.jpg",
+    price: 58,
     category: "t-shirts",
   },
 
   // Até aqui coloquei 3 produtos totalmente aleatórios, para criar mais uma página com menos produtos
 ];
+
+const gridContainer = document.querySelector(".grid__container");
+
+baseProducts.forEach((product) => {
+  const cardTemplate = document
+    .querySelector("#grid__card")
+    .content.querySelector(".grid__card")
+    .cloneNode(true);
+
+  const cardImage = cardTemplate.querySelector(".grid__card-image");
+  const cardName = cardTemplate.querySelector(".grid__card-name");
+  const cardPrice = cardTemplate.querySelector(".grid__card-price");
+
+  cardImage.setAttribute("src", product.image_src);
+  cardName.textContent = product.name;
+  cardPrice.textContent = product.price;
+
+  gridContainer.prepend(cardTemplate);
+});
