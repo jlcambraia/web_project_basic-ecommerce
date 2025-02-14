@@ -35,6 +35,10 @@
   line-height: 0;
 }
 
+.pagination__button {
+  cursor: pointer;
+}
+
 .pagination__button_focus {
   border: 1px solid #ffa585;
   color: #ffa585;
