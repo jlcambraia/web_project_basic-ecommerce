@@ -518,7 +518,7 @@ function renderProductsBasedOnRightArrowButton() {
   }
 
   // Chama a função para renderizar os produtos
-  renderProductsBasedOnNumberButton(nextButton);
+  renderProductsBasedOnNumberButton(nextButton, baseProducts);
   // Chama a função para alterar o foco do botão
   changeButtonFocus(nextButton);
 }
