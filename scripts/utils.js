@@ -616,3 +616,14 @@ function changeFilterFocus(clickedFilter) {
   // Adiciona foco ao botão clicado
   clickedFilter.classList.add("filter__products_focus");
 }
+
+// Função para mostrar popup quando clica em Organizar por
+
+const classifyContainer = document.querySelector(".filter__classify");
+const classifyPopup = document.querySelector(".filter__classify-popup");
+
+function openPopup() {
+  classifyPopup.classList.remove("filter__classify-popup_hidden");
+}
+
+classifyContainer.addEventListener("click", openPopup);
