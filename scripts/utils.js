@@ -1,3 +1,4 @@
+// Base de produtos do site
 const baseProducts = [
   {
     name: "Caneca de cerâmica rústica",
@@ -209,15 +210,6 @@ const baseProducts = [
   },
 
   {
-    name: "Caneca Never settle",
-    description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
-    image_src: "./images/caneca5.jpg",
-    price: 43,
-    category: "mugs",
-  },
-
-  {
     name: "Caneca Black Ring",
     description:
       "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
@@ -261,7 +253,14 @@ const baseProducts = [
     price: 40,
     category: "mugs",
   },
-
+  {
+    name: "Caneca Never settle",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca5.jpg",
+    price: 43,
+    category: "mugs",
+  },
   {
     name: "Camiseta Ramones",
     description:
@@ -317,6 +316,14 @@ const baseProducts = [
   },
 
   {
+    name: "Camiseta Broken Saints",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa2.jpg",
+    price: 58,
+    category: "t-shirts",
+  },
+  {
     name: "Caneca Never settle",
     description:
       "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
@@ -325,57 +332,126 @@ const baseProducts = [
     category: "mugs",
   },
 
-  {
-    name: "Camiseta Broken Saints",
-    description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
-    image_src: "./images/camisa2.jpg",
-    price: 58,
-    category: "t-shirts",
-  },
-
   // Até aqui coloquei 3 produtos totalmente aleatórios, para criar mais uma página com menos produtos
 ];
 
 // Variáveis
-const grid = document.querySelector(".grid");
+const gridContainer = document.querySelector(".grid__container");
+const paginationContainer = document.querySelector(
+  ".pagination__button-type-number-container"
+);
 
-// Cria o primeiro gridContainerTemplate
-let gridContainerTemplate = document
-  .querySelector("#grid__container")
-  .content.querySelector(".grid__container")
-  .cloneNode(true);
+// Calcula o total de páginas que o site vai ter
+const totalPages = Math.ceil(baseProducts.length / 12);
 
-// Renderiza todos os produtos na tela
-baseProducts.forEach((product, index) => {
-  if (index % 12 === 0) {
-    // A cada 12 produtos, cria um novo gridContainerTemplate
-    gridContainerTemplate = document
-      .querySelector("#grid__container")
-      .content.querySelector(".grid__container")
-      .cloneNode(true);
-    gridContainerTemplate.classList.add("grid__container_hidden");
-    grid.append(gridContainerTemplate); // Adiciona o novo container ao grid
-  }
-
-  const cardTemplate = document
-    .querySelector("#grid__card")
-    .content.querySelector(".grid__card")
+// Com base no total de páginas, cria a paginação (futuramente, trabalhar melhoria para mais de 5 páginas, ocultando algumas)
+for (index = 0; index < totalPages; index++) {
+  // Copia o template
+  const paginationButtonsTemplate = document
+    .querySelector("#pagination__buttons")
+    .content.querySelector(".pagination__button")
     .cloneNode(true);
 
-  const cardImage = cardTemplate.querySelector(".grid__card-image");
-  const cardName = cardTemplate.querySelector(".grid__card-name");
-  const cardPrice = cardTemplate.querySelector(".grid__card-price");
+  // Adiciona página ao container
+  paginationContainer.append(paginationButtonsTemplate);
 
-  cardImage.setAttribute("src", product.image_src);
-  cardName.textContent = product.name;
-  cardPrice.textContent = product.price;
+  // Adiciona o número ao botão
+  paginationButtonsTemplate.textContent = index + 1;
+}
 
-  // Adiciona o card ao container
-  // A cada 12 cards, como é criado um novo container, o próximo produto será adicionado ao novo container
-  gridContainerTemplate.append(cardTemplate);
+// Coloca foco na primeira página, que sempre é a que estará selecionada na abertura do site
+paginationContainer.firstChild.classList.add("pagination__button_focus");
+
+// Renderiza os 12 produtos iniciais sempre que abrir a página
+function renderInitialCards() {
+  for (index = 0; index < 12; index++) {
+    // Cada produto está dentro de baseProducts, na posição index
+    const product = baseProducts[index];
+
+    // Faz cópia da marcação
+    const cardTemplate = document
+      .querySelector("#grid__card")
+      .content.querySelector(".grid__card")
+      .cloneNode(true);
+
+    // Seleciona imagem, nome e preço dentro da marcação
+    const cardImage = cardTemplate.querySelector(".grid__card-image");
+    const cardName = cardTemplate.querySelector(".grid__card-name");
+    const cardPrice = cardTemplate.querySelector(".grid__card-price");
+
+    // Define os atributos, conforme produto dentro de baseProducts
+    cardImage.setAttribute("src", product.image_src);
+    cardName.textContent = product.name;
+    cardPrice.textContent = product.price;
+
+    // Inclui o card dentro do container
+    gridContainer.append(cardTemplate);
+  }
+}
+
+// Chama a função para renderizar os cards iniciais na abertura da página
+renderInitialCards();
+
+// Ouvinte para renderizar produtos na página conforme página selecionada
+paginationContainer.addEventListener("click", (evt) => {
+  if (evt.target.classList.contains("pagination__button")) {
+    const paginationButton = evt.target;
+    renderProductsBasedOnPaginationButton(paginationButton);
+    changeButtonFocus(paginationButton);
+  }
 });
 
-// Mostra o primeiro container da lista
-const gridContainers = document.querySelectorAll(".grid__container");
-gridContainers[0].classList.remove("grid__container_hidden");
+// Função que altera o foco do pagination conforme clique no botão
+function changeButtonFocus(paginationButton) {
+  // Limpa o foco de todos os botões
+  const allButtons = paginationContainer.querySelectorAll(
+    ".pagination__button"
+  );
+  allButtons.forEach((button) => {
+    button.classList.remove("pagination__button_focus");
+  });
+  // Adiciona foco ao botão clicado
+  paginationButton.classList.add("pagination__button_focus");
+}
+
+// Função para renderizar produtos na página, conforme página clicada
+function renderProductsBasedOnPaginationButton(paginationButton) {
+  // Seleciona todos os cards do container e remove eles, para nova renderização
+  const rendedCards = gridContainer.querySelectorAll(".grid__card");
+  rendedCards.forEach((card) => {
+    card.remove();
+  });
+
+  // Define o índex que vai começar a renderização
+  const initialIndex = (paginationButton.textContent - 1) * 12;
+  // Define o índex que vai finalizar a renderização
+  const rangeIndex = initialIndex + 12;
+
+  for (
+    let index = initialIndex;
+    index < rangeIndex && index < baseProducts.length;
+    index++
+  ) {
+    // Cada produto está dentro de baseProducts, na posição index
+    const product = baseProducts[index];
+
+    // Faz cópia da marcação
+    const cardTemplate = document
+      .querySelector("#grid__card")
+      .content.querySelector(".grid__card")
+      .cloneNode(true);
+
+    // Seleciona imagem, nome e preço dentro da marcação
+    const cardImage = cardTemplate.querySelector(".grid__card-image");
+    const cardName = cardTemplate.querySelector(".grid__card-name");
+    const cardPrice = cardTemplate.querySelector(".grid__card-price");
+
+    // Define os atributos, conforme produto dentro de baseProducts
+    cardImage.setAttribute("src", product.image_src);
+    cardName.textContent = product.name;
+    cardPrice.textContent = product.price;
+
+    // Inclui o card dentro do container
+    gridContainer.append(cardTemplate);
+  }
+}
