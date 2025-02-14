@@ -55,11 +55,16 @@
             <section class="filter">
               <div class="filter__by-products-and-classify">
                 <div class="filter__by-products">
-                  <button class="filter__products filter__products_focus">
+                  <button
+                    id="all-products"
+                    class="filter__products filter__products_focus"
+                  >
                     Todos os produtos
                   </button>
-                  <button class="filter__products">Camisetas</button>
-                  <button class="filter__products">Canecas</button>
+                  <button id="tshirts" class="filter__products">
+                    Camisetas
+                  </button>
+                  <button id="mugs" class="filter__products">Canecas</button>
                 </div>
                 <div class="filter__classify">
                   <p class="filter__classify-text">Organizar por</p>
@@ -89,14 +94,11 @@
             </section>
             <section class="pagination">
               <div class="pagination__container">
-                <div
-                  class="pagination__buttons pagination__buttons_type_number"
-                >
-                  <button class="pagination__button pagination__button_focus">
-                    1
-                  </button>
-                  <button class="pagination__button">2</button>
-                </div>
+                <div class="pagination__button-type-number-container"></div>
+                <template id="pagination__buttons">
+                  <button class="pagination__button"></button>
+                </template>
+
                 <div class="pagination__buttons pagination__buttons_type_arrow">
                   <img
                     src="./images/filter-arrow-left.svg"
@@ -112,104 +114,19 @@
               </div>
             </section>
             <section class="grid">
-              <div class="grid__container">
-                <ul class="grid__cards">
-                  <li class="grid__card">
-                    <img
-                      src="./images/caneca1.jpg"
-                      alt="Figura de uma caneca de cerâmica"
-                      class="grid__card-image"
-                    />
-                    <div class="grid__card-footer">
-                      <p class="grid__card-description">
-                        Caneca de cerâmica rústica
-                      </p>
-                      <p class="grid__card-price">40</p>
-                    </div>
-                  </li>
-                  <li class="grid__card">
-                    <img
-                      src="./images/camisa1.jpg"
-                      alt="Figura de uma camisa vermelha"
-                      class="grid__card-image"
-                    />
-                    <div class="grid__card-footer">
-                      <p class="grid__card-description">
-                        Caneca de cerâmica rústica
-                      </p>
-                      <p class="grid__card-price">40</p>
-                    </div>
-                  </li>
-                  <li class="grid__card">
-                    <img
-                      src="./images/caneca2.jpg"
-                      alt="Figura de uma caneca preta"
-                      class="grid__card-image"
-                    />
-                    <div class="grid__card-footer">
-                      <p class="grid__card-description">
-                        Caneca de cerâmica rústica
-                      </p>
-                      <p class="grid__card-price">40</p>
-                    </div>
-                  </li>
-                  <li class="grid__card">
-                    <img
-                      src="./images/camisa2.jpg"
-                      alt="Figura de uma camisa preta"
-                      class="grid__card-image"
-                    />
-                    <div class="grid__card-footer">
-                      <p class="grid__card-description">
-                        Caneca de cerâmica rústica
-                      </p>
-                      <p class="grid__card-price">40</p>
-                    </div>
-                  </li>
-                  <li class="grid__card">
-                    <img
-                      src="./images/camisa3.jpg"
-                      alt="Figura de uma caneca camisa branca"
-                      class="grid__card-image"
-                    />
-                    <div class="grid__card-footer">
-                      <p class="grid__card-description">
-                        Caneca de cerâmica rústica
-                      </p>
-                      <p class="grid__card-price">40</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </section>
-            <section class="pagination">
-              <div
-                class="pagination__container pagination__container_position_bottom"
-              >
-                <div
-                  class="pagination__buttons pagination__buttons_type_number"
-                >
-                  <button class="pagination__button pagination__button_focus">
-                    1
-                  </button>
-                  <button class="pagination__button">2</button>
+              <div class="grid__container"></div>
+              <template id="grid__card">
+                <div class="grid__card">
+                  <img src="#" alt="" class="grid__card-image" />
+                  <div class="grid__card-footer">
+                    <p class="grid__card-name"></p>
+                    <p class="grid__card-price"></p>
+                  </div>
                 </div>
-                <div class="pagination__buttons pagination__buttons_type_arrow">
-                  <img
-                    src="./images/filter-arrow-left.svg"
-                    alt="Ícone de seta para a esquerda"
-                    class="pagination__button pagination__button_left_arrow"
-                  />
-                  <img
-                    src="./images/filter-arrow-right.svg"
-                    alt="Ícone de seta para a direita"
-                    class="pagination__button pagination__button_right_arrow"
-                  />
-                </div>
-              </div>
+              </template>
             </section>
           </div>
-          <div class="content__product-page">
+          <div class="content__product-page content__product-page_hidden">
             <section class="return">
               <div class="return__button">
                 <img
@@ -262,7 +179,7 @@
               </div>
             </section>
           </div>
-          <div class="content__cart-page">
+          <div class="content__cart-page content__cart-page_hidden">
             <section class="return">
               <div class="return__button">
                 <img
@@ -600,6 +517,7 @@
         </p>
       </footer>
     </div>
+    <script src="./scripts/utils.js"></script>
     <script src="./pages/index.js"></script>
   </body>
 </html>

@@ -9,8 +9,25 @@
 .content__container {
   width: 90%;
   max-width: 1120px;
+  min-height: 81.87vh;
+}
+
+.content__main-page_hidden {
+  display: none;
 }
 
 .content__product-page {
-  height: 87.3vh;
+  z-index: 1;
+}
+
+.content__product-page_hidden {
+  display: none;
+}
+
+.content__cart-page {
+  z-index: 2;
+}
+
+.content__cart-page_hidden {
+  display: none;
 }

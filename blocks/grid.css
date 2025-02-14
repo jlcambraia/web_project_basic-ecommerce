@@ -5,12 +5,14 @@
 .grid__container {
   width: 100%;
   margin-bottom: 74px;
-}
-
-.grid__cards {
   display: flex;
   flex-wrap: wrap;
   gap: 24px 32px;
+  min-height: 45vh;
+}
+
+.grid__container_hidden {
+  display: none;
 }
 
 .grid__card {
@@ -34,7 +36,7 @@
   padding: 14px;
 }
 
-.grid__card-description {
+.grid__card-name {
   font-size: 16px;
   line-height: 24px;
   font-weight: 300;
