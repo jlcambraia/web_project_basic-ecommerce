@@ -337,9 +337,12 @@ const baseProducts = [
 
 // Variáveis
 const gridContainer = document.querySelector(".grid__container");
-const paginationContainer = document.querySelector(
+const paginationTypeNumberContainer = document.querySelector(
   ".pagination__button-type-number-container"
 );
+
+const lefArrow = document.querySelector(".pagination__button_left_arrow");
+const rightArrow = document.querySelector(".pagination__button_right_arrow");
 
 // Calcula o total de páginas que o site vai ter
 const totalPages = Math.ceil(baseProducts.length / 12);
@@ -353,14 +356,16 @@ for (index = 0; index < totalPages; index++) {
     .cloneNode(true);
 
   // Adiciona página ao container
-  paginationContainer.append(paginationButtonsTemplate);
+  paginationTypeNumberContainer.append(paginationButtonsTemplate);
 
   // Adiciona o número ao botão
   paginationButtonsTemplate.textContent = index + 1;
 }
 
 // Coloca foco na primeira página, que sempre é a que estará selecionada na abertura do site
-paginationContainer.firstChild.classList.add("pagination__button_focus");
+paginationTypeNumberContainer.firstChild.classList.add(
+  "pagination__button_focus"
+);
 
 // Renderiza os 12 produtos iniciais sempre que abrir a página
 function renderInitialCards() {
@@ -393,10 +398,10 @@ function renderInitialCards() {
 renderInitialCards();
 
 // Ouvinte para renderizar produtos na página conforme página selecionada
-paginationContainer.addEventListener("click", (evt) => {
+paginationTypeNumberContainer.addEventListener("click", (evt) => {
   if (evt.target.classList.contains("pagination__button")) {
     const paginationButton = evt.target;
-    renderProductsBasedOnPaginationButton(paginationButton);
+    renderProductsBasedOnNumberButton(paginationButton);
     changeButtonFocus(paginationButton);
   }
 });
@@ -404,18 +409,20 @@ paginationContainer.addEventListener("click", (evt) => {
 // Função que altera o foco do pagination conforme clique no botão
 function changeButtonFocus(paginationButton) {
   // Limpa o foco de todos os botões
-  const allButtons = paginationContainer.querySelectorAll(
+  const allButtons = paginationTypeNumberContainer.querySelectorAll(
     ".pagination__button"
   );
   allButtons.forEach((button) => {
     button.classList.remove("pagination__button_focus");
   });
+
   // Adiciona foco ao botão clicado
   paginationButton.classList.add("pagination__button_focus");
 }
 
 // Função para renderizar produtos na página, conforme página clicada
-function renderProductsBasedOnPaginationButton(paginationButton) {
+// O atributo precisa ser do tipo Number
+function renderProductsBasedOnNumberButton(paginationButton) {
   // Seleciona todos os cards do container e remove eles, para nova renderização
   const rendedCards = gridContainer.querySelectorAll(".grid__card");
   rendedCards.forEach((card) => {
@@ -454,4 +461,64 @@ function renderProductsBasedOnPaginationButton(paginationButton) {
     // Inclui o card dentro do container
     gridContainer.append(cardTemplate);
   }
+}
+
+// Ouvinte para botões arrow left
+lefArrow.addEventListener("click", renderProductsBasedOnLeftArrowButton);
+
+// Ouvinte para botões arrow right
+rightArrow.addEventListener("click", renderProductsBasedOnRightArrowButton);
+
+// Função para mover os botões do pagination para esquerda conforme clique no botão arrow para esquerda
+function renderProductsBasedOnLeftArrowButton() {
+  const allButtons = Array.from(
+    paginationTypeNumberContainer.querySelectorAll(".pagination__button")
+  );
+
+  // Encontra o index do botão selecionado classe
+  const selectedButtonIndex = allButtons.findIndex((button) =>
+    button.classList.contains("pagination__button_focus")
+  );
+
+  // Seleciona o botão anterior
+  let nextButton = null;
+  if (selectedButtonIndex === 0) {
+    // Se for o primeiro botão, não faz nada
+    return;
+  } else {
+    // Para todos os outros, seleciona corretamente o próximo botão
+    nextButton = allButtons[selectedButtonIndex - 1];
+  }
+
+  // Chama a função para renderizar os produtos
+  renderProductsBasedOnNumberButton(nextButton);
+  // Chama a função para alterar o foco do botão
+  changeButtonFocus(nextButton);
+}
+
+// Função para mover os botões do pagination para direita conforme clique no botão arrow para direita
+function renderProductsBasedOnRightArrowButton() {
+  const allButtons = Array.from(
+    paginationTypeNumberContainer.querySelectorAll(".pagination__button")
+  );
+
+  // Encontra o index do botão selecionado classe
+  const selectedButtonIndex = allButtons.findIndex((button) =>
+    button.classList.contains("pagination__button_focus")
+  );
+
+  // Seleciona o próximo botão
+  let nextButton = null;
+  if (selectedButtonIndex === allButtons.length - 1) {
+    // Se for o primeiro botão, não faz nada
+    return;
+  } else {
+    // Para todos os outros, seleciona corretamente o próximo botão
+    nextButton = allButtons[selectedButtonIndex + 1];
+  }
+
+  // Chama a função para renderizar os produtos
+  renderProductsBasedOnNumberButton(nextButton);
+  // Chama a função para alterar o foco do botão
+  changeButtonFocus(nextButton);
 }
