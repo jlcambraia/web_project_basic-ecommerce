@@ -626,4 +626,11 @@ function openPopup() {
   classifyPopup.classList.remove("filter__classify-popup_hidden");
 }
 
+function closePopup() {
+  classifyPopup.classList.add("filter__classify-popup_hidden");
+}
+
 classifyContainer.addEventListener("click", openPopup);
+
+// Arrumar html para colocar o classify dentro de um button, para facilitar
+// para abrir clicando nele e fechar clicando fora dele
