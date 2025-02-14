@@ -9,6 +9,7 @@
 .content__container {
   width: 90%;
   max-width: 1120px;
+  min-height: 81.87vh;
 }
 
 .content__main-page_hidden {
@@ -16,7 +17,6 @@
 }
 
 .content__product-page {
-  height: 81.87vh;
   z-index: 1;
 }
 
