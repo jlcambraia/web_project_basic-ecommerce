@@ -401,7 +401,7 @@ renderInitialCards();
 paginationTypeNumberContainer.addEventListener("click", (evt) => {
   if (evt.target.classList.contains("pagination__button")) {
     const paginationButton = evt.target;
-    renderProductsBasedOnNumberButton(paginationButton);
+    renderProductsBasedOnNumberButton(paginationButton, baseProducts);
     changeButtonFocus(paginationButton);
   }
 });
@@ -422,7 +422,7 @@ function changeButtonFocus(paginationButton) {
 
 // Função para renderizar produtos na página, conforme página clicada
 // O atributo precisa ser do tipo Number
-function renderProductsBasedOnNumberButton(paginationButton) {
+function renderProductsBasedOnNumberButton(paginationButton, productsList) {
   // Seleciona todos os cards do container e remove eles, para nova renderização
   const rendedCards = gridContainer.querySelectorAll(".grid__card");
   rendedCards.forEach((card) => {
@@ -440,7 +440,7 @@ function renderProductsBasedOnNumberButton(paginationButton) {
     index++
   ) {
     // Cada produto está dentro de baseProducts, na posição index
-    const product = baseProducts[index];
+    const product = productsList[index];
 
     // Faz cópia da marcação
     const cardTemplate = document
@@ -491,7 +491,7 @@ function renderProductsBasedOnLeftArrowButton() {
   }
 
   // Chama a função para renderizar os produtos
-  renderProductsBasedOnNumberButton(nextButton);
+  renderProductsBasedOnNumberButton(nextButton, baseProducts);
   // Chama a função para alterar o foco do botão
   changeButtonFocus(nextButton);
 }
