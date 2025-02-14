@@ -634,3 +634,5 @@ classifyContainer.addEventListener("click", openPopup);
 
 // Arrumar html para colocar o classify dentro de um button, para facilitar
 // para abrir clicando nele e fechar clicando fora dele
+
+// Testar
