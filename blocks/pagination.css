@@ -18,10 +18,6 @@
   gap: 2px;
 }
 
-.pagination__container_position_bottom {
-  margin-bottom: 60px;
-}
-
 .pagination__buttons {
   display: flex;
   gap: 2px;
