@@ -1,4 +1,4 @@
-// Base de produtos do site
+// Lista de todos os produtos
 const baseProducts = [
   {
     name: "Caneca de cerâmica rústica",
@@ -335,6 +335,335 @@ const baseProducts = [
   // Até aqui coloquei 3 produtos totalmente aleatórios, para criar mais uma página com menos produtos
 ];
 
+// Lista de produtos que vai alterar conforme clique nos botões do filtro
+let productsThatCanChange = [
+  {
+    name: "Caneca de cerâmica rústica",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca1.jpg",
+    price: 40,
+    category: "mugs",
+  },
+  {
+    name: "Camiseta not today.",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa1.jpg",
+    price: 78,
+    category: "t-shirts",
+  },
+  {
+    name: "Caneca Black Ring",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca2.jpg",
+    price: 32,
+    category: "mugs",
+  },
+  {
+    name: "Camiseta Broken Saints",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa2.jpg",
+    price: 58,
+    category: "t-shirts",
+  },
+  {
+    name: "Camiseta Outcast",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa3.jpg",
+    price: 89,
+    category: "t-shirts",
+  },
+  {
+    name: "Caneca The Grounds",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca3.jpg",
+    price: 85,
+    category: "mugs",
+  },
+  {
+    name: "Camiseta evening",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa4.jpg",
+    price: 69,
+    category: "t-shirts",
+  },
+  {
+    name: "Caneca preto fosco",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca4.jpg",
+    price: 28,
+    category: "mugs",
+  },
+  {
+    name: "Caneca Never settle",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca5.jpg",
+    price: 43,
+    category: "mugs",
+  },
+  {
+    name: "Camiseta DREAMER",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa5.jpg",
+    price: 55,
+    category: "t-shirts",
+  },
+  {
+    name: "Caneca Decaf! P&Co",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca6.jpg",
+    price: 32,
+    category: "mugs",
+  },
+  {
+    name: "Camiseta Ramones",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa6.jpg",
+    price: 92,
+    category: "t-shirts",
+  },
+
+  {
+    name: "Caneca Decaf! P&Co",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca6.jpg",
+    price: 32,
+    category: "mugs",
+  },
+
+  {
+    name: "Caneca Never settle",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca5.jpg",
+    price: 43,
+    category: "mugs",
+  },
+  {
+    name: "Caneca preto fosco",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca4.jpg",
+    price: 28,
+    category: "mugs",
+  },
+  {
+    name: "Camiseta Ramones",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa6.jpg",
+    price: 92,
+    category: "t-shirts",
+  },
+  {
+    name: "Camiseta evening",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa4.jpg",
+    price: 69,
+    category: "t-shirts",
+  },
+  {
+    name: "Caneca The Grounds",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca3.jpg",
+    price: 85,
+    category: "mugs",
+  },
+  {
+    name: "Camiseta Outcast",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa3.jpg",
+    price: 89,
+    category: "t-shirts",
+  },
+  {
+    name: "Camiseta DREAMER",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa5.jpg",
+    price: 55,
+    category: "t-shirts",
+  },
+  {
+    name: "Camiseta Broken Saints",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa2.jpg",
+    price: 58,
+    category: "t-shirts",
+  },
+  {
+    name: "Caneca Black Ring",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca2.jpg",
+    price: 32,
+    category: "mugs",
+  },
+  {
+    name: "Camiseta not today.",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa1.jpg",
+    price: 78,
+    category: "t-shirts",
+  },
+
+  {
+    name: "Caneca de cerâmica rústica",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca1.jpg",
+    price: 40,
+    category: "mugs",
+  },
+
+  {
+    name: "Camiseta evening",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa4.jpg",
+    price: 69,
+    category: "t-shirts",
+  },
+
+  {
+    name: "Caneca Black Ring",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca2.jpg",
+    price: 32,
+    category: "mugs",
+  },
+
+  {
+    name: "Caneca The Grounds",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca3.jpg",
+    price: 85,
+    category: "mugs",
+  },
+
+  {
+    name: "Camiseta Broken Saints",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa2.jpg",
+    price: 58,
+    category: "t-shirts",
+  },
+
+  {
+    name: "Caneca preto fosco",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca4.jpg",
+    price: 28,
+    category: "mugs",
+  },
+
+  {
+    name: "Caneca de cerâmica rústica",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca1.jpg",
+    price: 40,
+    category: "mugs",
+  },
+  {
+    name: "Caneca Never settle",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca5.jpg",
+    price: 43,
+    category: "mugs",
+  },
+  {
+    name: "Camiseta Ramones",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa6.jpg",
+    price: 92,
+    category: "t-shirts",
+  },
+  {
+    name: "Camiseta DREAMER",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa5.jpg",
+    price: 55,
+    category: "t-shirts",
+  },
+  {
+    name: "Camiseta Outcast",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa3.jpg",
+    price: 89,
+    category: "t-shirts",
+  },
+
+  {
+    name: "Caneca Decaf! P&Co",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca6.jpg",
+    price: 32,
+    category: "mugs",
+  },
+
+  {
+    name: "Camiseta not today.",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa1.jpg",
+    price: 78,
+    category: "t-shirts",
+  },
+
+  {
+    name: "Caneca The Grounds",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca3.jpg",
+    price: 85,
+    category: "mugs",
+  },
+
+  {
+    name: "Camiseta Broken Saints",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/camisa2.jpg",
+    price: 58,
+    category: "t-shirts",
+  },
+  {
+    name: "Caneca Never settle",
+    description:
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+    image_src: "./images/caneca5.jpg",
+    price: 43,
+    category: "mugs",
+  },
+];
+
 // Variáveis
 const gridContainer = document.querySelector(".grid__container");
 const paginationTypeNumberContainer = document.querySelector(
@@ -345,33 +674,57 @@ const lefArrow = document.querySelector(".pagination__button_left_arrow");
 const rightArrow = document.querySelector(".pagination__button_right_arrow");
 
 // Calcula o total de páginas que o site vai ter
-const totalPages = Math.ceil(baseProducts.length / 12);
-
-// Com base no total de páginas, cria a paginação (futuramente, trabalhar melhoria para mais de 5 páginas, ocultando algumas)
-for (index = 0; index < totalPages; index++) {
-  // Copia o template
-  const paginationButtonsTemplate = document
-    .querySelector("#pagination__buttons")
-    .content.querySelector(".pagination__button")
-    .cloneNode(true);
-
-  // Adiciona página ao container
-  paginationTypeNumberContainer.append(paginationButtonsTemplate);
-
-  // Adiciona o número ao botão
-  paginationButtonsTemplate.textContent = index + 1;
+function calculateTotalPages(productsList) {
+  return (totalPages = Math.ceil(productsList.length / 12));
 }
 
+// Chama a função para calcular o número de páginas inicial
+calculateTotalPages(productsThatCanChange);
+
+const pagesTotal = calculateTotalPages(productsThatCanChange);
+
+// Função que, com base no total de páginas, cria a paginação (futuramente, trabalhar melhoria para mais de 5 páginas, ocultando algumas)
+function renderPagination(numberOfPages) {
+  const rendedPagination = paginationTypeNumberContainer.querySelectorAll(
+    ".pagination__button"
+  );
+  rendedPagination.forEach((pagination) => {
+    pagination.remove();
+  });
+
+  for (index = 0; index < numberOfPages; index++) {
+    // Copia o template
+    const paginationButtonsTemplate = document
+      .querySelector("#pagination__buttons")
+      .content.querySelector(".pagination__button")
+      .cloneNode(true);
+
+    // Adiciona página ao container
+    paginationTypeNumberContainer.append(paginationButtonsTemplate);
+
+    // Adiciona o número ao botão
+    paginationButtonsTemplate.textContent = index + 1;
+  }
+}
+
+// Chama a função para renderizar a paginação
+renderPagination(pagesTotal);
+
 // Coloca foco na primeira página, que sempre é a que estará selecionada na abertura do site
-paginationTypeNumberContainer.firstChild.classList.add(
-  "pagination__button_focus"
-);
+function focusOnFirstChild() {
+  paginationTypeNumberContainer.firstChild.classList.add(
+    "pagination__button_focus"
+  );
+}
+
+// Chama a função para colocar foco no primeiro elemento da página
+focusOnFirstChild();
 
 // Renderiza os 12 produtos iniciais sempre que abrir a página
-function renderInitialCards() {
+function renderInitialCards(productsList) {
   for (index = 0; index < 12; index++) {
-    // Cada produto está dentro de baseProducts, na posição index
-    const product = baseProducts[index];
+    // Cada produto está dentro de productsList, na posição index
+    const product = productsList[index];
 
     // Faz cópia da marcação
     const cardTemplate = document
@@ -384,7 +737,7 @@ function renderInitialCards() {
     const cardName = cardTemplate.querySelector(".grid__card-name");
     const cardPrice = cardTemplate.querySelector(".grid__card-price");
 
-    // Define os atributos, conforme produto dentro de baseProducts
+    // Define os atributos, conforme produto dentro de productsList
     cardImage.setAttribute("src", product.image_src);
     cardName.textContent = product.name;
     cardPrice.textContent = product.price;
@@ -395,13 +748,13 @@ function renderInitialCards() {
 }
 
 // Chama a função para renderizar os cards iniciais na abertura da página
-renderInitialCards();
+renderInitialCards(productsThatCanChange);
 
 // Ouvinte para renderizar produtos na página conforme página selecionada
 paginationTypeNumberContainer.addEventListener("click", (evt) => {
   if (evt.target.classList.contains("pagination__button")) {
     const paginationButton = evt.target;
-    renderProductsBasedOnNumberButton(paginationButton, baseProducts);
+    renderProductsBasedOnNumberButton(paginationButton, productsThatCanChange);
     changeButtonFocus(paginationButton);
   }
 });
@@ -436,10 +789,10 @@ function renderProductsBasedOnNumberButton(paginationButton, productsList) {
 
   for (
     let index = initialIndex;
-    index < rangeIndex && index < baseProducts.length;
+    index < rangeIndex && index < productsList.length;
     index++
   ) {
-    // Cada produto está dentro de baseProducts, na posição index
+    // Cada produto está dentro de productsList, na posição index
     const product = productsList[index];
 
     // Faz cópia da marcação
@@ -453,7 +806,7 @@ function renderProductsBasedOnNumberButton(paginationButton, productsList) {
     const cardName = cardTemplate.querySelector(".grid__card-name");
     const cardPrice = cardTemplate.querySelector(".grid__card-price");
 
-    // Define os atributos, conforme produto dentro de baseProducts
+    // Define os atributos, conforme produto dentro de productsList
     cardImage.setAttribute("src", product.image_src);
     cardName.textContent = product.name;
     cardPrice.textContent = product.price;
@@ -491,7 +844,7 @@ function renderProductsBasedOnLeftArrowButton() {
   }
 
   // Chama a função para renderizar os produtos
-  renderProductsBasedOnNumberButton(nextButton, baseProducts);
+  renderProductsBasedOnNumberButton(nextButton, productsThatCanChange);
   // Chama a função para alterar o foco do botão
   changeButtonFocus(nextButton);
 }
@@ -518,7 +871,75 @@ function renderProductsBasedOnRightArrowButton() {
   }
 
   // Chama a função para renderizar os produtos
-  renderProductsBasedOnNumberButton(nextButton, baseProducts);
+  renderProductsBasedOnNumberButton(nextButton, productsThatCanChange);
   // Chama a função para alterar o foco do botão
   changeButtonFocus(nextButton);
+}
+
+// Organiza a base de produtos conforme tag
+
+// Filtrando pela categoria camisas
+
+const mugProducts = baseProducts.filter(
+  (product) => product.category === "mugs"
+);
+
+const allProducts = baseProducts;
+
+// Colocar em variáveis
+const tshirtButton = document.querySelector("#tshirts");
+
+// Ouvinte para o botão de filtro de Camisetas
+tshirtButton.addEventListener("click", (evt) => {
+  const productsThatCanChange = baseProducts.filter(
+    (product) => product.category === "t-shirts"
+  );
+
+  renderFilteredProducts(productsThatCanChange);
+  changeFilterFocus(evt.target);
+});
+
+// Função que será executada toda vez que clicar em um filtro
+function renderFilteredProducts(productsThatCanChange) {
+  calculateTotalPages(productsThatCanChange);
+
+  const pagesTotal = calculateTotalPages(productsThatCanChange);
+
+  renderPagination(pagesTotal);
+
+  focusOnFirstChild();
+
+  const rendedCards = gridContainer.querySelectorAll(".grid__card");
+  rendedCards.forEach((card) => {
+    card.remove();
+  });
+
+  renderInitialCards(productsThatCanChange);
+
+  paginationTypeNumberContainer.addEventListener("click", (evt) => {
+    if (evt.target.classList.contains("pagination__button")) {
+      const paginationButton = evt.target;
+      renderProductsBasedOnNumberButton(
+        paginationButton,
+        productsThatCanChange
+      );
+      changeButtonFocus(paginationButton);
+    }
+  });
+
+  lefArrow.addEventListener("click", renderProductsBasedOnLeftArrowButton);
+
+  rightArrow.addEventListener("click", renderProductsBasedOnRightArrowButton);
+}
+
+// Alterar o foco do filtro do produto clicado
+function changeFilterFocus(clickedFilter) {
+  // Limpa o foco de todos os botões
+  const allFilters = document.querySelectorAll(".filter__products");
+  allFilters.forEach((filter) => {
+    filter.classList.remove("filter__products_focus");
+  });
+
+  // Adiciona foco ao botão clicado
+  clickedFilter.classList.add("filter__products_focus");
 }
