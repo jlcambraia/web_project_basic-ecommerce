@@ -343,12 +343,13 @@ const gridContainer = document.querySelector(".grid__container");
 const paginationTypeNumberContainer = document.querySelector(
   ".pagination__button-type-number-container"
 );
-
 const lefArrow = document.querySelector(".pagination__button_left_arrow");
 const rightArrow = document.querySelector(".pagination__button_right_arrow");
 const allProductsButton = document.querySelector("#all-products");
 const tshirtsButton = document.querySelector("#tshirts");
 const mugsButton = document.querySelector("#mugs");
+const classifyContainer = document.querySelector(".filter__classify");
+const classifyPopup = document.querySelector(".filter__classify-popup");
 
 // Calcula o total de páginas que o site vai ter
 function calculateTotalPages(productsList) {
@@ -616,11 +617,6 @@ function changeFilterFocus(clickedFilter) {
   // Adiciona foco ao botão clicado
   clickedFilter.classList.add("filter__products_focus");
 }
-
-// Função para mostrar popup quando clica em Organizar por
-
-const classifyContainer = document.querySelector(".filter__classify");
-const classifyPopup = document.querySelector(".filter__classify-popup");
 
 // Função para abrir o Popup do Classify
 function openPopup() {
