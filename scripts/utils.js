@@ -454,6 +454,11 @@ function changeButtonFocus(paginationButton) {
 // Função para renderizar produtos na página, conforme página clicada
 // O atributo precisa ser do tipo Number
 function renderProductsBasedOnNumberButton(paginationButton, productsList) {
+  // Adicionar organização da página conforme filtro
+  if (currentSortOrder) {
+    productsList.sort(currentSortOrder);
+  }
+
   // Seleciona todos os cards do container e remove eles, para nova renderização
   const rendedCards = gridContainer.querySelectorAll(".grid__card");
   rendedCards.forEach((card) => {
@@ -652,4 +657,101 @@ document.addEventListener("keydown", (evt) => {
     const classifyButton = document.querySelector(".filter__classify-button");
     classifyButton.blur();
   }
+});
+
+// Selecionando botões
+
+const classifyDecreasingName = document.querySelector(
+  "#classify-name-decreasing"
+);
+const classifyIncreasingName = document.querySelector(
+  "#classify-name-increasing"
+);
+const classifyDecreasingPrice = document.querySelector(
+  "#classify-price-decreasing"
+);
+const classifyIncreasingPrice = document.querySelector(
+  "#classify-price-increasing"
+);
+
+// Cria uma variável para armazenar a ordenação, que não tem até então
+let currentSortOrder = null;
+
+// Função que vai ordernar as páginas corretamente
+function renderFilteredProducts(productsThatCanChange) {
+  if (currentSortOrder) {
+    productsThatCanChange.sort(currentSortOrder);
+  }
+
+  calculateTotalPages(productsThatCanChange);
+  const pagesTotal = calculateTotalPages(productsThatCanChange);
+  renderPagination(pagesTotal);
+  focusOnFirstChild();
+
+  const rendedCards = gridContainer.querySelectorAll(".grid__card");
+  rendedCards.forEach((card) => {
+    card.remove();
+  });
+
+  renderInitialCards(productsThatCanChange);
+}
+
+// Ouvinte no botão que define a ordenação dos produtos em ordem decrescente
+classifyDecreasingName.addEventListener("click", () => {
+  const selectedFilter = document.querySelector(".filter__products_focus");
+
+  // Define a ordenação atual
+  currentSortOrder = (a, b) => b.name.localeCompare(a.name);
+
+  // Aplica a ordenação
+  productsThatCanChange.sort(currentSortOrder);
+
+  // Renderiza e mantém o filtro selecionado
+  renderFilteredProducts(productsThatCanChange);
+  changeFilterFocus(selectedFilter);
+});
+
+// Ouvinte no botão que define a ordenação dos produtos em ordem crescente
+classifyIncreasingName.addEventListener("click", () => {
+  const selectedFilter = document.querySelector(".filter__products_focus");
+
+  // Define a ordenação atual
+  currentSortOrder = (a, b) => a.name.localeCompare(b.name);
+
+  // Aplica a ordenação
+  productsThatCanChange.sort(currentSortOrder);
+
+  // Renderiza e mantém o filtro selecionado
+  renderFilteredProducts(productsThatCanChange);
+  changeFilterFocus(selectedFilter);
+});
+
+// Ouvinte no botão que define a ordenação dos produtos do mais barato para mais caro
+classifyDecreasingPrice.addEventListener("click", () => {
+  const selectedFilter = document.querySelector(".filter__products_focus");
+
+  // Define a ordenação atual
+  currentSortOrder = (a, b) => b.price - a.price;
+
+  // Aplica a ordenação
+  productsThatCanChange.sort(currentSortOrder);
+
+  // Renderiza e mantém o filtro selecionado
+  renderFilteredProducts(productsThatCanChange);
+  changeFilterFocus(selectedFilter);
+});
+
+// Ouvinte no botão que define a ordenação dos produtos do mais barato para mais caro
+classifyIncreasingPrice.addEventListener("click", () => {
+  const selectedFilter = document.querySelector(".filter__products_focus");
+
+  // Define a ordenação atual
+  currentSortOrder = (a, b) => a.price - b.price;
+
+  // Aplica a ordenação
+  productsThatCanChange.sort(currentSortOrder);
+
+  // Renderiza e mantém o filtro selecionado
+  renderFilteredProducts(productsThatCanChange);
+  changeFilterFocus(selectedFilter);
 });
