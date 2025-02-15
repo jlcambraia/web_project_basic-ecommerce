@@ -350,6 +350,18 @@ const tshirtsButton = document.querySelector("#tshirts");
 const mugsButton = document.querySelector("#mugs");
 const classifyContainer = document.querySelector(".filter__classify");
 const classifyPopup = document.querySelector(".filter__classify-popup");
+const classifyDecreasingName = document.querySelector(
+  "#classify-name-decreasing"
+);
+const classifyIncreasingName = document.querySelector(
+  "#classify-name-increasing"
+);
+const classifyDecreasingPrice = document.querySelector(
+  "#classify-price-decreasing"
+);
+const classifyIncreasingPrice = document.querySelector(
+  "#classify-price-increasing"
+);
 
 // Calcula o total de páginas que o site vai ter
 function calculateTotalPages(productsList) {
@@ -400,7 +412,10 @@ focusOnFirstChild();
 
 // Renderiza os 12 produtos iniciais sempre que abrir a página
 function renderInitialCards(productsList) {
-  for (let index = 0; index < 12; index++) {
+  // Limita o loop ao tamanho da lista ou a 12, o que for menor
+  const limit = Math.min(12, productsList.length);
+
+  for (let index = 0; index < limit; index++) {
     // Cada produto está dentro de productsList, na posição index
     const product = productsList[index];
 
@@ -595,19 +610,12 @@ allProductsButton.addEventListener("click", (evt) => {
 
 // Função que será executada toda vez que clicar em um filtro
 function renderFilteredProducts(productsThatCanChange) {
-  calculateTotalPages(productsThatCanChange);
+  // Aplica a ordenação atual (se houver)
+  if (currentSortOrder) {
+    productsThatCanChange.sort(currentSortOrder);
+  }
 
-  const pagesTotal = calculateTotalPages(productsThatCanChange);
-
-  renderPagination(pagesTotal);
-
-  focusOnFirstChild();
-
-  const rendedCards = gridContainer.querySelectorAll(".grid__card");
-  rendedCards.forEach((card) => {
-    card.remove();
-  });
-
+  // Renderiza os produtos
   renderInitialCards(productsThatCanChange);
 }
 
@@ -658,21 +666,6 @@ document.addEventListener("keydown", (evt) => {
     classifyButton.blur();
   }
 });
-
-// Selecionando botões
-
-const classifyDecreasingName = document.querySelector(
-  "#classify-name-decreasing"
-);
-const classifyIncreasingName = document.querySelector(
-  "#classify-name-increasing"
-);
-const classifyDecreasingPrice = document.querySelector(
-  "#classify-price-decreasing"
-);
-const classifyIncreasingPrice = document.querySelector(
-  "#classify-price-increasing"
-);
 
 // Cria uma variável para armazenar a ordenação, que não tem até então
 let currentSortOrder = null;
@@ -754,4 +747,40 @@ classifyIncreasingPrice.addEventListener("click", () => {
   // Renderiza e mantém o filtro selecionado
   renderFilteredProducts(productsThatCanChange);
   changeFilterFocus(selectedFilter);
+});
+
+// Variável do botão de busca
+const form = document.querySelector(".header__form");
+const searchInput = document.querySelector(".header__search");
+
+form.addEventListener("submit", (evt) => {
+  // Previne de recarregar a página
+  evt.preventDefault();
+
+  // Obtém o valor do input de busca
+  const searchInputValue = searchInput.value.trim().toLowerCase();
+
+  // Limpa o campo de busca
+  form.reset();
+
+  // Filtra os produtos com base no valor do input
+  const filteredProducts = productsThatCanChange.filter((product) =>
+    product.name.toLowerCase().includes(searchInputValue)
+  );
+
+  // Verifica se há produtos filtrados
+  if (filteredProducts.length === 0) {
+    return; // Caso não haja produtos, sai sem renderizar produtos
+  }
+
+  // Aplica a ordenação atual (se houver)
+  if (currentSortOrder) {
+    filteredProducts.sort(currentSortOrder);
+  }
+
+  // Atualiza a lista de produtos que podem ser alterados
+  productsThatCanChange = filteredProducts;
+
+  // Renderiza os produtos filtrados
+  renderFilteredProducts(productsThatCanChange);
 });
