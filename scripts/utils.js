@@ -619,34 +619,40 @@ function changeFilterFocus(clickedFilter) {
 
 // Função para mostrar popup quando clica em Organizar por
 
-const classifyButton = document.querySelector(".filter__classify-button");
+const classifyContainer = document.querySelector(".filter__classify");
 const classifyPopup = document.querySelector(".filter__classify-popup");
 
-// Função para abrir o Popup
+// Função para abrir o Popup do Classify
 function openPopup() {
   classifyPopup.classList.remove("filter__classify-popup_hidden");
 }
 
-// Função para fechar o Popup
+// Função para fechar o Popup do Classify
 function closePopup() {
   classifyPopup.classList.add("filter__classify-popup_hidden");
 }
 
-// Ouvinte
-classifyButton.addEventListener("click", openPopup);
+// Ouvinte para abrir o Popup do Classify
+classifyContainer.addEventListener("click", openPopup);
 
+// Ouvinte para fechar o Popup clicando fora dele
 document.addEventListener("click", (evt) => {
-  if (!evt.target.classList.contains("filter__classify-button")) {
+  if (
+    !evt.target.classList.contains("filter__classify-button") &&
+    !evt.target.classList.contains("filter__classify-icon") &&
+    !evt.target.classList.contains("filter__classify-popup")
+  ) {
     closePopup();
   }
 });
 
+// Ouvinte para fechar o Popup clicando na tecla em Escape
 document.addEventListener("keydown", (evt) => {
   if (
     evt.key === "Escape" &&
     !classifyPopup.classList.contains("filter__classify-popup_hidden")
   ) {
     closePopup();
-    classifyButton.blur();
+    classifyContainer.blur();
   }
 });
