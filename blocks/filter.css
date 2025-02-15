@@ -50,8 +50,13 @@
   cursor: pointer;
 }
 
-.filter__classify-text {
+.filter__classify-button {
   color: #737380;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
 }
 
 .filter__classify-icon {
