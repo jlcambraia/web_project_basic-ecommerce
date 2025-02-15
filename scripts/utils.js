@@ -653,6 +653,7 @@ document.addEventListener("keydown", (evt) => {
     !classifyPopup.classList.contains("filter__classify-popup_hidden")
   ) {
     closePopup();
-    classifyContainer.blur();
+    const classifyButton = document.querySelector(".filter__classify-button");
+    classifyButton.blur();
   }
 });
