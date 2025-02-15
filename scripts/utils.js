@@ -632,7 +632,17 @@ function closePopup() {
 
 classifyContainer.addEventListener("click", openPopup);
 
-// Arrumar html para colocar o classify dentro de um button, para facilitar
-// para abrir clicando nele e fechar clicando fora dele
+document.addEventListener("click", (evt) => {
+  if (!evt.target.classList.contains("filter__classify-button")) {
+    closePopup();
+  }
+});
 
-// Testar
+document.addEventListener("keydown", (evt) => {
+  if (
+    evt.key === "Escape" &&
+    !classifyPopup.classList.contains("filter__classify-popup_hidden")
+  ) {
+    closePopup();
+  }
+});
