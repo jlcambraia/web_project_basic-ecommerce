@@ -28,10 +28,6 @@
   padding-bottom: 4px;
 }
 
-.filter__products:hover {
-  cursor: pointer;
-}
-
 .filter__products_focus {
   font-weight: 600;
   color: #41414d;
@@ -65,7 +61,7 @@
 }
 
 .filter__classify-popup {
-  width: 180px;
+  width: 200px;
   position: absolute;
   top: 25px;
   right: 0;
@@ -87,4 +83,12 @@
   border: none;
   background-color: #fff;
   color: #737380;
+  padding: 5px;
+}
+
+.filter__classify-popup-button:hover {
+  cursor: pointer;
+  background-color: rgba(255, 165, 133, 0.2);
+  font-weight: 600;
+  color: #41414d;
 }
