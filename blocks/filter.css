@@ -46,10 +46,6 @@
   position: relative;
 }
 
-.filter__classify:hover {
-  cursor: pointer;
-}
-
 .filter__classify-button {
   color: #737380;
   border: none;
@@ -57,6 +53,10 @@
   align-items: center;
   justify-content: flex-end;
   gap: 6px;
+}
+
+.filter__classify-button:hover {
+  cursor: pointer;
 }
 
 .filter__classify-icon {
@@ -76,6 +76,7 @@
   padding: 16px 16px;
   row-gap: 15px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1;
 }
 
 .filter__classify-popup_hidden {
