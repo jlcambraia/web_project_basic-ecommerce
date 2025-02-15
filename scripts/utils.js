@@ -619,18 +619,21 @@ function changeFilterFocus(clickedFilter) {
 
 // Função para mostrar popup quando clica em Organizar por
 
-const classifyContainer = document.querySelector(".filter__classify");
+const classifyButton = document.querySelector(".filter__classify-button");
 const classifyPopup = document.querySelector(".filter__classify-popup");
 
+// Função para abrir o Popup
 function openPopup() {
   classifyPopup.classList.remove("filter__classify-popup_hidden");
 }
 
+// Função para fechar o Popup
 function closePopup() {
   classifyPopup.classList.add("filter__classify-popup_hidden");
 }
 
-classifyContainer.addEventListener("click", openPopup);
+// Ouvinte
+classifyButton.addEventListener("click", openPopup);
 
 document.addEventListener("click", (evt) => {
   if (!evt.target.classList.contains("filter__classify-button")) {
@@ -644,7 +647,6 @@ document.addEventListener("keydown", (evt) => {
     !classifyPopup.classList.contains("filter__classify-popup_hidden")
   ) {
     closePopup();
-    const classifyButton = document.querySelector(".filter__classify-button");
     classifyButton.blur();
   }
 });
