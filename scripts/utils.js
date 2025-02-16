@@ -779,12 +779,61 @@ const form = document.querySelector(".header__form");
 const searchInput = document.querySelector(".header__search");
 const gridMessageContainer = document.querySelector(".grid__message-container");
 const gridMessage = document.querySelector(".grid__message");
+const searchIcon = document.querySelector(".header__search-icon");
 
 // Ouvinte para o input de busca
 form.addEventListener("submit", (evt) => {
   // Previne de recarregar a página
   evt.preventDefault();
 
+  // Obtém o valor do input de busca
+  const searchInputValue = searchInput.value.trim().toLowerCase();
+
+  // Limpa o campo de busca
+  form.reset();
+
+  // Cria cópia profunda da lista de produtos
+  productsThatCanChange = [...baseProducts];
+
+  // Filtra os produtos com base no valor do input
+  const filteredProducts = productsThatCanChange.filter((product) =>
+    product.name.toLowerCase().includes(searchInputValue)
+  );
+
+  if (!searchInputValue) {
+    return;
+  }
+
+  // Verifica se há produtos filtrados
+  if (filteredProducts.length === 0) {
+    gridMessageContainer.classList.remove("grid__message-container_hidden");
+    gridMessage.textContent = `Não encontramos resultados para: "${searchInputValue}"`;
+    const allCards = gridContainer.querySelectorAll(".grid__card");
+    allCards.forEach((card) => {
+      card.remove();
+    });
+    return; // Caso não haja produtos, sai sem renderizar produtos
+  }
+
+  // Aplica a ordenação atual (se houver)
+  if (currentSortOrder) {
+    filteredProducts.sort(currentSortOrder);
+  }
+
+  // Atualiza a lista de produtos que podem ser alterados
+  productsThatCanChange = filteredProducts;
+
+  gridMessageContainer.classList.remove("grid__message-container_hidden");
+  gridMessage.textContent = `Resultados de busca para: "${searchInputValue}"`;
+
+  // Renderiza os produtos filtrados
+  renderFilteredProducts(productsThatCanChange);
+
+  // Muda o foco para o botão
+  changeFilterFocus(allProductsButton);
+});
+
+searchIcon.addEventListener("click", () => {
   // Obtém o valor do input de busca
   const searchInputValue = searchInput.value.trim().toLowerCase();
 
