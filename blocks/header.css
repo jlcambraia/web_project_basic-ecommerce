@@ -55,6 +55,10 @@
   right: 2px;
 }
 
+.header__search-icon:hover {
+  cursor: pointer;
+}
+
 .header__cart-container {
   display: flex;
   position: relative;
