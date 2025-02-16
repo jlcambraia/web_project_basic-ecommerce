@@ -1,5 +1,6 @@
 .grid {
   display: flex;
+  flex-direction: column;
 }
 
 .grid__container {
@@ -11,8 +12,15 @@
   min-height: 45vh;
 }
 
-.grid__container_hidden {
+.grid__message-container_hidden {
   display: none;
+}
+
+.grid__message {
+  font-size: 18px;
+  margin-bottom: 50px;
+  color: #09090a;
+  font-weight: 500;
 }
 
 .grid__card {

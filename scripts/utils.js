@@ -335,8 +335,8 @@ const baseProducts = [
   // Até aqui coloquei 3 produtos totalmente aleatórios, para criar mais uma página com menos produtos
 ];
 
-// Lista de produtos que vai alterar conforme clique nos botões do filtro
-let productsThatCanChange = baseProducts;
+// Cria cópia produnda de lista de produtos que vai alterar conforme clique nos botões do filtro
+let productsThatCanChange = [...baseProducts];
 
 // Variáveis
 const gridContainer = document.querySelector(".grid__container");
@@ -522,6 +522,7 @@ rightArrow.addEventListener("click", renderProductsBasedOnRightArrowButton);
 
 // Função para mover os botões do pagination para esquerda conforme clique no botão arrow para esquerda
 function renderProductsBasedOnLeftArrowButton() {
+  // Seleciona todos os botões
   const allButtons = Array.from(
     paginationTypeNumberContainer.querySelectorAll(".pagination__button")
   );
@@ -549,6 +550,7 @@ function renderProductsBasedOnLeftArrowButton() {
 
 // Função para mover os botões do pagination para direita conforme clique no botão arrow para direita
 function renderProductsBasedOnRightArrowButton() {
+  // Seleciona todos os botões
   const allButtons = Array.from(
     paginationTypeNumberContainer.querySelectorAll(".pagination__button")
   );
@@ -576,8 +578,12 @@ function renderProductsBasedOnRightArrowButton() {
 
 // Ouvinte para o botão de filtro de Canecas
 mugsButton.addEventListener("click", (evt) => {
-  // Filtrando pela categoria canecas
-  productsThatCanChange = baseProducts.filter(
+  // Retira a mensagem de pesquisa
+  gridMessageContainer.classList.add("grid__message-container_hidden");
+  gridMessage.textContent = "";
+
+  // Filtrando pela categoria canecas, criando cópia produnda deles
+  productsThatCanChange = [...baseProducts].filter(
     (product) => product.category === "mugs"
   );
   const clickedButton = evt.target;
@@ -588,8 +594,12 @@ mugsButton.addEventListener("click", (evt) => {
 
 // Ouvinte para o botão de filtro de Camisetas
 tshirtsButton.addEventListener("click", (evt) => {
-  // Filtrando pela categoria canecas
-  productsThatCanChange = baseProducts.filter(
+  // Retira a mensagem de pesquisa
+  gridMessageContainer.classList.add("grid__message-container_hidden");
+  gridMessage.textContent = "";
+
+  // Filtrando pela categoria canecas, criando cópia profunda deles
+  productsThatCanChange = [...baseProducts].filter(
     (product) => product.category === "t-shirts"
   );
   const clickedButton = evt.target;
@@ -600,8 +610,12 @@ tshirtsButton.addEventListener("click", (evt) => {
 
 // Ouvinte para o botão de filtro para Todos os Produtos
 allProductsButton.addEventListener("click", (evt) => {
-  // Os produtos agora não serão filtrados e voltarão a ser os iniciais
-  productsThatCanChange = baseProducts;
+  // Retira a mensagem de pesquisa
+  gridMessageContainer.classList.add("grid__message-container_hidden");
+  gridMessage.textContent = "";
+
+  // Os produtos agora não serão filtrados e voltarão a ser os iniciais, criando cópia profunda deles
+  productsThatCanChange = [...baseProducts];
   const clickedButton = evt.target;
 
   renderFilteredProducts(productsThatCanChange);
@@ -691,6 +705,10 @@ function renderFilteredProducts(productsThatCanChange) {
 
 // Ouvinte no botão que define a ordenação dos produtos em ordem decrescente
 classifyDecreasingName.addEventListener("click", () => {
+  // Mostra mensagem de organização dos componentes
+  gridMessageContainer.classList.remove("grid__message-container_hidden");
+  gridMessage.textContent = `Organizado por: "${classifyDecreasingName.textContent.trim()}"`;
+
   const selectedFilter = document.querySelector(".filter__products_focus");
 
   // Define a ordenação atual
@@ -706,6 +724,8 @@ classifyDecreasingName.addEventListener("click", () => {
 
 // Ouvinte no botão que define a ordenação dos produtos em ordem crescente
 classifyIncreasingName.addEventListener("click", () => {
+  gridMessageContainer.classList.remove("grid__message-container_hidden");
+  gridMessage.textContent = `Organizado por: "${classifyIncreasingName.textContent.trim()}"`;
   const selectedFilter = document.querySelector(".filter__products_focus");
 
   // Define a ordenação atual
@@ -721,6 +741,8 @@ classifyIncreasingName.addEventListener("click", () => {
 
 // Ouvinte no botão que define a ordenação dos produtos do mais barato para mais caro
 classifyDecreasingPrice.addEventListener("click", () => {
+  gridMessageContainer.classList.remove("grid__message-container_hidden");
+  gridMessage.textContent = `Organizado por: "${classifyDecreasingPrice.textContent.trim()}"`;
   const selectedFilter = document.querySelector(".filter__products_focus");
 
   // Define a ordenação atual
@@ -736,6 +758,9 @@ classifyDecreasingPrice.addEventListener("click", () => {
 
 // Ouvinte no botão que define a ordenação dos produtos do mais barato para mais caro
 classifyIncreasingPrice.addEventListener("click", () => {
+  gridMessageContainer.classList.remove("grid__message-container_hidden");
+  gridMessage.textContent = `Organizado por: "${classifyIncreasingPrice.textContent.trim()}"`;
+
   const selectedFilter = document.querySelector(".filter__products_focus");
 
   // Define a ordenação atual
@@ -752,7 +777,10 @@ classifyIncreasingPrice.addEventListener("click", () => {
 // Variável do botão de busca
 const form = document.querySelector(".header__form");
 const searchInput = document.querySelector(".header__search");
+const gridMessageContainer = document.querySelector(".grid__message-container");
+const gridMessage = document.querySelector(".grid__message");
 
+// Ouvinte para o input de busca
 form.addEventListener("submit", (evt) => {
   // Previne de recarregar a página
   evt.preventDefault();
@@ -763,13 +791,26 @@ form.addEventListener("submit", (evt) => {
   // Limpa o campo de busca
   form.reset();
 
+  // Cria cópia profunda da lista de produtos
+  productsThatCanChange = [...baseProducts];
+
   // Filtra os produtos com base no valor do input
   const filteredProducts = productsThatCanChange.filter((product) =>
     product.name.toLowerCase().includes(searchInputValue)
   );
 
+  if (!searchInputValue) {
+    return;
+  }
+
   // Verifica se há produtos filtrados
   if (filteredProducts.length === 0) {
+    gridMessageContainer.classList.remove("grid__message-container_hidden");
+    gridMessage.textContent = `Não encontramos resultados para: "${searchInputValue}"`;
+    const allCards = gridContainer.querySelectorAll(".grid__card");
+    allCards.forEach((card) => {
+      card.remove();
+    });
     return; // Caso não haja produtos, sai sem renderizar produtos
   }
 
@@ -781,6 +822,60 @@ form.addEventListener("submit", (evt) => {
   // Atualiza a lista de produtos que podem ser alterados
   productsThatCanChange = filteredProducts;
 
+  gridMessageContainer.classList.remove("grid__message-container_hidden");
+  gridMessage.textContent = `Resultados de busca para: "${searchInputValue}"`;
+
   // Renderiza os produtos filtrados
   renderFilteredProducts(productsThatCanChange);
+
+  // Muda o foco para o botão
+  changeFilterFocus(allProductsButton);
 });
+
+// Variável para limpar os filtros
+const clearFilterButton = document.querySelector(".grid__message-button");
+
+// Função para limpar os filtros
+// Função para limpar os filtros
+function clearFilter() {
+  const focusedFilter = document.querySelector(".filter__products_focus");
+
+  // Verifica se há um filtro selecionado
+  if (!focusedFilter) {
+    console.error("Nenhum filtro selecionado.");
+    return;
+  }
+
+  // Retira a mensagem de pesquisa
+  gridMessageContainer.classList.add("grid__message-container_hidden");
+  gridMessage.textContent = "";
+
+  // Remove todos os cards
+  const allCards = gridContainer.querySelectorAll(".grid__card");
+  allCards.forEach((card) => {
+    card.remove();
+  });
+
+  // Limpa a ordenação atual
+  currentSortOrder = null;
+
+  // Define a lista de produtos com base no filtro selecionado, criando cópia profunda deles
+  if (focusedFilter.textContent.trim().includes("Camisetas")) {
+    productsThatCanChange = [...baseProducts].filter(
+      (product) => product.category === "t-shirts"
+    );
+  } else if (focusedFilter.textContent.trim().includes("Canecas")) {
+    productsThatCanChange = [...baseProducts].filter(
+      (product) => product.category === "mugs"
+    );
+  } else if (focusedFilter.textContent.trim().includes("Todos os produtos")) {
+    productsThatCanChange = [...baseProducts];
+  }
+
+  // Renderiza os produtos e mantém o foco no filtro selecionado
+  renderFilteredProducts(productsThatCanChange);
+  changeFilterFocus(focusedFilter);
+}
+
+// Adiciona o evento de clique ao botão de limpar filtro
+clearFilterButton.addEventListener("click", clearFilter);
