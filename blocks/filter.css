@@ -46,12 +46,17 @@
   position: relative;
 }
 
-.filter__classify:hover {
-  cursor: pointer;
+.filter__classify-button {
+  color: #737380;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
 }
 
-.filter__classify-text {
-  color: #737380;
+.filter__classify-button:hover {
+  cursor: pointer;
 }
 
 .filter__classify-icon {
@@ -60,7 +65,7 @@
 }
 
 .filter__classify-popup {
-  width: 180px;
+  width: 200px;
   position: absolute;
   top: 25px;
   right: 0;
@@ -71,6 +76,7 @@
   padding: 16px 16px;
   row-gap: 15px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1;
 }
 
 .filter__classify-popup_hidden {
@@ -81,4 +87,12 @@
   border: none;
   background-color: #fff;
   color: #737380;
+  padding: 5px;
+}
+
+.filter__classify-popup-button:hover {
+  cursor: pointer;
+  background-color: rgba(255, 165, 133, 0.2);
+  font-weight: 600;
+  color: #41414d;
 }

@@ -1,5 +1,6 @@
 .grid {
   display: flex;
+  flex-direction: column;
 }
 
 .grid__container {
@@ -11,8 +12,38 @@
   min-height: 45vh;
 }
 
-.grid__container_hidden {
+.grid__message-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.grid__message-container_hidden {
   display: none;
+}
+
+.grid__message {
+  font-size: 18px;
+  color: #09090a;
+  font-weight: 500;
+  margin-right: 50px;
+}
+
+.grid__message-button {
+  color: #737380;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.grid__message-button:hover {
+  cursor: pointer;
+}
+
+.grid__message-button-icon {
+  width: 16px;
 }
 
 .grid__card {

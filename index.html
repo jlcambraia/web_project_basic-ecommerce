@@ -67,25 +67,38 @@
                   <button id="mugs" class="filter__products">Canecas</button>
                 </div>
                 <div class="filter__classify">
-                  <p class="filter__classify-text">Organizar por</p>
-                  <img
-                    src="./images/filter-arrow-down.svg"
-                    alt="Ícone de seta para baixo"
-                    class="filter__classify-icon"
-                  />
+                  <button class="filter__classify-button">
+                    Organizar por<img
+                      src="./images/filter-arrow-down.svg"
+                      alt="Ícone de seta para baixo"
+                      class="filter__classify-icon"
+                    />
+                  </button>
                   <div
                     class="filter__classify-popup filter__classify-popup_hidden"
                   >
-                    <button class="filter__classify-popup-button">
+                    <button
+                      id="classify-name-decreasing"
+                      class="filter__classify-popup-button"
+                    >
                       Nome: Maior - menor
                     </button>
-                    <button class="filter__classify-popup-button">
+                    <button
+                      id="classify-name-increasing"
+                      class="filter__classify-popup-button"
+                    >
                       Nome: Menor - maior
                     </button>
-                    <button class="filter__classify-popup-button">
+                    <button
+                      id="classify-price-decreasing"
+                      class="filter__classify-popup-button"
+                    >
                       Preço: Maior - menor
                     </button>
-                    <button class="filter__classify-popup-button">
+                    <button
+                      id="classify-price-increasing"
+                      class="filter__classify-popup-button"
+                    >
                       Preço: Menor - maior
                     </button>
                   </div>
@@ -114,6 +127,19 @@
               </div>
             </section>
             <section class="grid">
+              <div
+                class="grid__message-container grid__message-container_hidden"
+              >
+                <p class="grid__message"></p>
+                <button class="grid__message-button">
+                  Limpar filtros<img
+                    class="grid__message-button-icon"
+                    src="./images/filter-close-icon.png"
+                    alt="Ícone da letra X para fechar filtro"
+                  />
+                </button>
+              </div>
+
               <div class="grid__container"></div>
               <template id="grid__card">
                 <div class="grid__card">
