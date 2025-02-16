@@ -28,6 +28,10 @@
   padding-bottom: 4px;
 }
 
+.filter__products:hover {
+  cursor: pointer;
+}
+
 .filter__products_focus {
   font-weight: 600;
   color: #41414d;
