@@ -64,6 +64,10 @@
   position: relative;
 }
 
+.header__cart-container:hover {
+  cursor: pointer;
+}
+
 .header__cart-icon {
   width: 24px;
   height: 24px;
