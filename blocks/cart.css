@@ -67,6 +67,15 @@
   gap: 16px;
 }
 
+.cart__products-container-message {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cart__products-container-message_hidden {
+  display: none;
+}
+
 .cart__product-container {
   background-color: #fff;
   border-radius: 8px;
