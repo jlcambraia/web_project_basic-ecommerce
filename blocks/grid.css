@@ -52,6 +52,10 @@
   border-radius: 8px;
 }
 
+.grid__card:hover {
+  cursor: pointer;
+}
+
 .grid__card-image {
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;

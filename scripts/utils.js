@@ -367,6 +367,11 @@ const searchInput = document.querySelector(".header__search");
 const gridMessageContainer = document.querySelector(".grid__message-container");
 const gridMessage = document.querySelector(".grid__message");
 const searchIcon = document.querySelector(".header__search-icon");
+const productPageContainer = document.querySelector(".product-info__container");
+const mainPage = document.querySelector(".content__main-page");
+const productPage = document.querySelector(".content__product-page");
+const cartPage = document.querySelector(".content__cart-page");
+const returnButtons = document.querySelectorAll(".return__button");
 
 // Calcula o total de páginas que o site vai ter
 function calculateTotalPages(productsList) {
@@ -796,6 +801,11 @@ form.addEventListener("submit", (evt) => {
   // Previne de recarregar a página
   evt.preventDefault();
 
+  // Mostra a Main Page
+  productPage.classList.add("content__product-page_hidden");
+  cartPage.classList.add("content__cart-page_hidden");
+  mainPage.classList.remove("content__main-page_hidden");
+
   // Obtém o valor do input de busca
   const searchInputValue = searchInput.value.trim().toLowerCase();
 
@@ -844,6 +854,11 @@ form.addEventListener("submit", (evt) => {
 });
 
 searchIcon.addEventListener("click", () => {
+  // Mostra a Main Page
+  productPage.classList.add("content__product-page_hidden");
+  cartPage.classList.add("content__cart-page_hidden");
+  mainPage.classList.remove("content__main-page_hidden");
+
   // Obtém o valor do input de busca
   const searchInputValue = searchInput.value.trim().toLowerCase();
 
@@ -857,10 +872,6 @@ searchIcon.addEventListener("click", () => {
   const filteredProducts = productsThatCanChange.filter((product) =>
     product.name.toLowerCase().includes(searchInputValue)
   );
-
-  if (!searchInputValue) {
-    return;
-  }
 
   // Verifica se há produtos filtrados
   if (filteredProducts.length === 0) {
@@ -895,13 +906,11 @@ searchIcon.addEventListener("click", () => {
 const clearFilterButton = document.querySelector(".grid__message-button");
 
 // Função para limpar os filtros
-// Função para limpar os filtros
 function clearFilter() {
   const focusedFilter = document.querySelector(".filter__products_focus");
 
   // Verifica se há um filtro selecionado
   if (!focusedFilter) {
-    console.error("Nenhum filtro selecionado.");
     return;
   }
 
@@ -938,3 +947,67 @@ function clearFilter() {
 
 // Adiciona o evento de clique ao botão de limpar filtro
 clearFilterButton.addEventListener("click", clearFilter);
+
+// Renderizar produto clicado na Página de produtos
+function renderClickedProductOnProductPage(evt) {
+  const allRenderedProducts =
+    productPageContainer.querySelectorAll(".product-info");
+  allRenderedProducts.forEach((product) => {
+    product.remove();
+  });
+
+  const clickedProduct = evt.target.closest(".grid__card");
+  const clickedProductName =
+    clickedProduct.querySelector(".grid__card-name").textContent;
+
+  // Faz cópia da marcação
+  const productTemplate = document
+    .querySelector("#product-info")
+    .content.querySelector(".product-info")
+    .cloneNode(true);
+
+  // Seleciona imagem, nome e preço dentro da marcação
+  const productImage = productTemplate.querySelector(".product-info__image");
+  const productTag = productTemplate.querySelector(".product-info__tag");
+  const productName = productTemplate.querySelector(".product-info__name");
+  const productPrice = productTemplate.querySelector(".product-info__price");
+  const productDescription = productTemplate.querySelector(
+    ".product-info__description"
+  );
+
+  // Seleciona o produto correto no baseProducts
+  baseProducts.forEach((product) => {
+    if (product.name === clickedProductName) {
+      // Define os atributos, conforme produto dentro de productsList
+      productImage.setAttribute("src", product.image_src);
+      productTag.textContent = product.category;
+      productName.textContent = product.name;
+      productPrice.textContent = product.price;
+      productDescription.textContent = product.description;
+    }
+  });
+
+  // Inclui o card dentro do container
+  productPageContainer.append(productTemplate);
+}
+
+// Ouvinte para clicar nos produtos e abrir a Product Page do produto
+gridContainer.addEventListener("click", (evt) => {
+  // Verifica se o clique foi em um produto (ou em um elemento dentro dele)
+  const clickedProduct = evt.target.closest(".grid__card");
+  if (clickedProduct) {
+    mainPage.classList.add("content__main-page_hidden");
+    productPage.classList.remove("content__product-page_hidden");
+    renderClickedProductOnProductPage(evt);
+  }
+});
+
+// Ouvinte para os botões de voltar das páginas Product Page e Cart Page
+returnButtons.forEach((returnButton) => {
+  returnButton.addEventListener("click", () => {
+    // Mostra a Main Page
+    productPage.classList.add("content__product-page_hidden");
+    cartPage.classList.add("content__cart-page_hidden");
+    mainPage.classList.remove("content__main-page_hidden");
+  });
+});

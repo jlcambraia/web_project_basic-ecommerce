@@ -10,6 +10,10 @@
   align-items: center;
 }
 
+.return__button:hover {
+  cursor: pointer;
+}
+
 .return__button-icon {
   width: 24px;
 }

@@ -152,7 +152,7 @@
               </template>
             </section>
           </div>
-          <div class="content__product-page content__product-page_hidden">
+          <div class="content__product-page">
             <section class="return">
               <div class="return__button">
                 <img
@@ -164,45 +164,37 @@
               </div>
             </section>
             <section class="product-info">
-              <div class="product-info-container">
-                <div class="product-info-image-container">
-                  <img
-                    class="product-info__image"
-                    src="./images/caneca1.jpg"
-                    alt="Foto de uma caneca de cerâmica"
-                  />
-                </div>
-                <div class="product-info-description-and-button-container">
-                  <div class="product-info-description-container">
-                    <p class="product-info__tag">Caneca</p>
-                    <h2 class="product-info__name">
-                      Caneca de cerâmica rústica
-                    </h2>
-                    <p class="product-info__price">40</p>
-                    <p class="product-info__freight-information">
-                      *Frete de R$40,00 para todo o Brasil. Grátis para compras
-                      acima de R$900,00.
-                    </p>
-                    <h3 class="product-info__title">Descrição</h3>
-                    <p class="product-info__description">
-                      Aqui vem um texto descritivo do produto, esta caixa de
-                      texto servirá apenas de exemplo para que simule algum
-                      texto que venha a ser inserido nesse campo, descrevendo
-                      tal produto.
-                    </p>
+              <div class="product-info__container"></div>
+              <template id="product-info">
+                <div class="product-info">
+                  <div class="product-info-image-container">
+                    <img class="product-info__image" src="#" alt="" />
                   </div>
-                  <div class="product-info__add-to-cart-container">
-                    <img
-                      src="./images/add-to-cart-shopping-bag.svg"
-                      alt="Ícone de bag para adicionar ao carrinho"
-                      class="product-info__add-to-cart-icon"
-                    />
-                    <button class="product-info__add-to-cart-button">
-                      Adicionar ao carrinho
-                    </button>
+                  <div class="product-info-description-and-button-container">
+                    <div class="product-info-description-container">
+                      <p class="product-info__tag"></p>
+                      <h2 class="product-info__name"></h2>
+                      <p class="product-info__price"></p>
+                      <p class="product-info__freight-information">
+                        *Frete de R$40,00 para todo o Brasil. Grátis para
+                        compras acima de R$900,00.
+                      </p>
+                      <h3 class="product-info__title">Descrição</h3>
+                      <p class="product-info__description"></p>
+                    </div>
+                    <div class="product-info__add-to-cart-container">
+                      <img
+                        src="./images/add-to-cart-shopping-bag.svg"
+                        alt="Ícone de bag para adicionar ao carrinho"
+                        class="product-info__add-to-cart-icon"
+                      />
+                      <button class="product-info__add-to-cart-button">
+                        Adicionar ao carrinho
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </template>
             </section>
           </div>
           <div class="content__cart-page content__cart-page_hidden">
