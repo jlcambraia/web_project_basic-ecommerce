@@ -1006,6 +1006,7 @@ gridContainer.addEventListener("click", (evt) => {
     mainPage.classList.add("content__main-page_hidden");
     productPage.classList.remove("content__product-page_hidden");
     renderClickedProductOnProductPage(evt);
+    hideProductAdded();
   }
 });
 
@@ -1075,6 +1076,27 @@ function addToProductToCart() {
   cartProductDescription.textContent = productDescription;
 
   cartProductContainer.prepend(cartProductTemplate);
+
+  showProductAdded();
+}
+
+// Mostrar imagem de produto adicionado ao carrinho
+function showProductAdded() {
+  const addedProductContainer = document.querySelector(
+    ".product-info__add-to-cart-message-container"
+  );
+  addedProductContainer.classList.remove(
+    "product-info__add-to-cart-message-container_hidden"
+  );
+}
+
+function hideProductAdded() {
+  const addedProductContainer = document.querySelector(
+    ".product-info__add-to-cart-message-container"
+  );
+  addedProductContainer.classList.add(
+    "product-info__add-to-cart-message-container_hidden"
+  );
 }
 
 // Ouvinte do botão de adicionar ao carrinho

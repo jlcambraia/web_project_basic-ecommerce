@@ -64,7 +64,30 @@
   width: 448px;
 }
 
+.product-info__add-to-cart-message-and-button-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-info__add-to-cart-message-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.product-info__add-to-cart-message-container_hidden {
+  display: none;
+}
+
+.product-info__add-to-cart-message {
+  font-weight: 500;
+}
+
 .product-info__add-to-cart-button {
+  width: 100%;
   border: none;
   background-color: #115d8c;
   height: 44px;
