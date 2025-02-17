@@ -19,3 +19,7 @@ Em breve...
 ## Planos de Melhoria:
 
 Em breve...
+
+## Fonte do Projeto:
+
+Projeto baseado no desafio Front-End da Rocketseat: [Clique aqui para acessar](https://github.com/Rocketseat/frontend-challenge)
