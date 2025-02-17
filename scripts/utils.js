@@ -578,11 +578,13 @@ function renderProductsBasedOnRightArrowButton() {
 
 // Ouvinte para o botão de filtro de Canecas
 mugsButton.addEventListener("click", (evt) => {
-  // Retira qualquer filtro que existir
-  clearFilter();
-  // Retira a mensagem de pesquisa
-  gridMessageContainer.classList.add("grid__message-container_hidden");
-  gridMessage.textContent = "";
+  if (gridMessage.textContent.includes("busca")) {
+    // Retira qualquer filtro que existir
+    clearFilter();
+    // Retira a mensagem de pesquisa
+    gridMessageContainer.classList.add("grid__message-container_hidden");
+    gridMessage.textContent = "";
+  }
 
   // Filtrando pela categoria canecas, criando cópia produnda deles
   productsThatCanChange = [...baseProducts].filter(
@@ -596,12 +598,13 @@ mugsButton.addEventListener("click", (evt) => {
 
 // Ouvinte para o botão de filtro de Camisetas
 tshirtsButton.addEventListener("click", (evt) => {
-  // Retira qualquer filtro que existir
-  clearFilter();
-
-  // Retira a mensagem de pesquisa
-  gridMessageContainer.classList.add("grid__message-container_hidden");
-  gridMessage.textContent = "";
+  if (gridMessage.textContent.includes("busca")) {
+    // Retira qualquer filtro que existir
+    clearFilter();
+    // Retira a mensagem de pesquisa
+    gridMessageContainer.classList.add("grid__message-container_hidden");
+    gridMessage.textContent = "";
+  }
 
   // Filtrando pela categoria canecas, criando cópia profunda deles
   productsThatCanChange = [...baseProducts].filter(
@@ -615,11 +618,13 @@ tshirtsButton.addEventListener("click", (evt) => {
 
 // Ouvinte para o botão de filtro para Todos os Produtos
 allProductsButton.addEventListener("click", (evt) => {
-  // Retira qualquer filtro que existir
-  clearFilter();
-  // Retira a mensagem de pesquisa
-  gridMessageContainer.classList.add("grid__message-container_hidden");
-  gridMessage.textContent = "";
+  if (gridMessage.textContent.includes("busca")) {
+    // Retira qualquer filtro que existir
+    clearFilter();
+    // Retira a mensagem de pesquisa
+    gridMessageContainer.classList.add("grid__message-container_hidden");
+    gridMessage.textContent = "";
+  }
 
   // Os produtos agora não serão filtrados e voltarão a ser os iniciais, criando cópia profunda deles
   productsThatCanChange = [...baseProducts];
