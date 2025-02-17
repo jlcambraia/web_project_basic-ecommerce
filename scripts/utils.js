@@ -1107,6 +1107,7 @@ productPageContainer.addEventListener("click", (evt) => {
     addProductToCart();
     checkIfThereIsAnyProductOnContainer();
     checkNumberOfProductsOnCart();
+    changeNumberOfProductsOnCartHeaderIcon();
   }
 });
 
@@ -1203,6 +1204,9 @@ const totalProductsNumber = document.querySelector(
 const cartContainerMessage = document.querySelector(
   ".cart__products-container-message"
 );
+const cartTotalProductsNumber = document.querySelector(
+  ".header__cart-quantity"
+);
 
 // Alterar quantidade de produtos na página do carrinho
 function checkIfThereIsAnyProductOnContainer() {
@@ -1234,4 +1238,9 @@ function checkNumberOfProductsOnCart() {
   });
 
   totalProductsNumber.textContent = totalQuantity;
+}
+
+// Alterar quantidader de produtos no ícone do carrinho
+function changeNumberOfProductsOnCartHeaderIcon() {
+  cartTotalProductsNumber.textContent = totalProductsNumber.textContent;
 }
