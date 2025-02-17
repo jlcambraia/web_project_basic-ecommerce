@@ -362,6 +362,11 @@ const classifyDecreasingPrice = document.querySelector(
 const classifyIncreasingPrice = document.querySelector(
   "#classify-price-increasing"
 );
+const form = document.querySelector(".header__form");
+const searchInput = document.querySelector(".header__search");
+const gridMessageContainer = document.querySelector(".grid__message-container");
+const gridMessage = document.querySelector(".grid__message");
+const searchIcon = document.querySelector(".header__search-icon");
 
 // Calcula o total de páginas que o site vai ter
 function calculateTotalPages(productsList) {
@@ -785,13 +790,6 @@ classifyIncreasingPrice.addEventListener("click", () => {
   renderFilteredProducts(productsThatCanChange);
   changeFilterFocus(selectedFilter);
 });
-
-// Variável do botão de busca
-const form = document.querySelector(".header__form");
-const searchInput = document.querySelector(".header__search");
-const gridMessageContainer = document.querySelector(".grid__message-container");
-const gridMessage = document.querySelector(".grid__message");
-const searchIcon = document.querySelector(".header__search-icon");
 
 // Ouvinte para o input de busca
 form.addEventListener("submit", (evt) => {
