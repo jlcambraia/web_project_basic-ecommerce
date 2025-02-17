@@ -298,6 +298,11 @@
   line-height: 24px;
 }
 
+.cart__complete-the-purchase-button:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
 .cart__summary-faq {
   display: flex;
   flex-direction: column;
