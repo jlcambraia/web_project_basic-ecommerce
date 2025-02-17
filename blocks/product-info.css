@@ -79,6 +79,7 @@
 
 .product-info__add-to-cart-button:hover {
   cursor: pointer;
+  opacity: 0.95;
 }
 
 .product-info__add-to-cart-icon {
