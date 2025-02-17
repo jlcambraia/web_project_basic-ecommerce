@@ -140,6 +140,7 @@
 }
 
 .cart__select-quantity-button {
+  width: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -152,6 +153,7 @@
 .cart__select-quantity-button:hover {
   cursor: pointer;
   font-weight: 600;
+  color: #09090a;
 }
 
 .cart__select-quantity-button-icon {
