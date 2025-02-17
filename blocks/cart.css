@@ -130,6 +130,9 @@
   padding: 10px 10px 5px 15px;
   width: 65px;
   position: relative;
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 .cart__select-quantity:hover {
@@ -157,6 +160,7 @@
 
 .cart__select-quantity-button-icon {
   display: block;
+  margin-bottom: 5px;
 }
 
 .cart__select-quantity-popup {

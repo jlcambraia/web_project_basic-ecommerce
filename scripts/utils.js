@@ -1032,54 +1032,57 @@ cartButton.addEventListener("click", () => {
 });
 
 // Adicionar ao carrinho
-function addToProductToCart() {
+function addProductToCart() {
+  // Seleciona nome do produto da página
+  const productName = productPageContainer
+    .querySelector(".product-info__name")
+    .textContent.trim();
+
+  // Verifica se o produto já está no carrinho
+  const alreadyInCart = Array.from(
+    cartProductContainer.querySelectorAll(".cart__product-container")
+  ).some(
+    (product) =>
+      product.querySelector(".cart__product-name").textContent.trim() ===
+      productName
+  );
+
+  if (alreadyInCart) {
+    return;
+  }
+
   // Faz cópia da marcação
   const cartProductTemplate = document
     .querySelector("#cart__product-container")
     .content.querySelector(".cart__product-container")
     .cloneNode(true);
 
-  // Seleciona imagem, nome, descrição e preço dentro da marcação
-  const cartProductImage = cartProductTemplate.querySelector(
-    ".cart__product-image"
-  );
-  const cartProductName = cartProductTemplate.querySelector(
-    ".cart__product-name"
-  );
-  const cartProductPrice =
-    cartProductTemplate.querySelector("#cart__unit-price");
-  const cartProductDescription = cartProductTemplate.querySelector(
-    ".cart__product-description"
-  );
+  // Preenche os dados do produto
+  cartProductTemplate
+    .querySelector(".cart__product-image")
+    .setAttribute(
+      "src",
+      productPageContainer
+        .querySelector(".product-info__image")
+        .getAttribute("src")
+    );
+  cartProductTemplate.querySelector(".cart__product-name").textContent =
+    productName;
+  cartProductTemplate.querySelector("#cart__unit-price").textContent =
+    productPageContainer.querySelector(".product-info__price").textContent;
+  cartProductTemplate.querySelector(".cart__product-description").textContent =
+    productPageContainer.querySelector(
+      ".product-info__description"
+    ).textContent;
 
-  // Seleciona imagem, nome, descrição e preço dentro da página de produto
-  const productImage = productPageContainer
-    .querySelector(".product-info__image")
-    .getAttribute("src");
-  const productName = productPageContainer.querySelector(
-    ".product-info__name"
-  ).textContent;
-  const productPrice = productPageContainer.querySelector(
-    ".product-info__price"
-  ).textContent;
-  const productDescription = productPageContainer.querySelector(
-    ".product-info__description"
-  ).textContent;
-
-  // Seleciona o produto correto no baseProducts
-
-  cartProductImage.setAttribute("src", productImage);
-  cartProductName.textContent = productName;
-  cartProductPrice.textContent = productPrice;
-  cartProductDescription.textContent = productDescription;
-
+  // Adiciona ao carrinho
   cartProductContainer.prepend(cartProductTemplate);
 
-  showProductAdded();
+  showAddedProductMessage();
 }
 
 // Mostrar imagem de produto adicionado ao carrinho
-function showProductAdded() {
+function showAddedProductMessage() {
   const addedProductContainer = document.querySelector(
     ".product-info__add-to-cart-message-container"
   );
@@ -1100,7 +1103,8 @@ function hideProductAdded() {
 // Ouvinte do botão de adicionar ao carrinho
 productPageContainer.addEventListener("click", (evt) => {
   if (evt.target.classList.contains("product-info__add-to-cart-button")) {
-    addToProductToCart();
+    alreadyHaveProductOnCart();
+    addProductToCart();
   }
 });
 
@@ -1154,3 +1158,40 @@ cartPage.addEventListener("keydown", (evt) => {
     });
   }
 });
+
+function alreadyHaveProductOnCart() {
+  const productName = productPageContainer
+    .querySelector(".product-info__name")
+    .textContent.trim();
+
+  // Encontra o produto correto no carrinho
+  const productOnCart = Array.from(
+    cartProductContainer.querySelectorAll(".cart__product-container")
+  ).find(
+    (product) =>
+      product.querySelector(".cart__product-name").textContent.trim() ===
+      productName
+  );
+
+  // Se não encontrar, não faz nada
+  if (!productOnCart) return;
+
+  const productQuantity = productOnCart.querySelector(
+    ".cart__select-quantity-button"
+  );
+
+  // Verifica limite máximo (defini aleatoriamente 5 produtos)
+  if (Number(productQuantity.textContent) < 5) {
+    productQuantity.textContent = Number(productQuantity.textContent) + 1;
+  } else {
+    const addedProductMessage = document.querySelector(
+      ".product-info__add-to-cart-message"
+    );
+    addedProductMessage.textContent =
+      "Você só pode adicionar até 5 deste produto no carrinho";
+    const addedProductIcon = document.querySelector(
+      ".product-info__add-to-cart-icon"
+    );
+    addedProductIcon.setAttribute("src", "./images/product-info-not-ok.png");
+  }
+}
