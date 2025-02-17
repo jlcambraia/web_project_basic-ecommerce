@@ -156,18 +156,28 @@
   display: none;
 }
 
-.cart__total {
+.cart__prices-container {
+  display: flex;
+  gap: 15px;
+}
+
+.cart__price-container {
+  display: flex;
+  gap: 5px;
+}
+
+.cart__price {
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
   color: #09090a;
 }
 
-.cart__total::before {
+.cart__price::before {
   content: "R$ ";
 }
 
-.cart__total::after {
+.cart__price::after {
   content: ",00";
 }
 
