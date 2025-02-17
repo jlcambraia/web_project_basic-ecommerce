@@ -984,6 +984,13 @@ function renderClickedProductOnProductPage(evt) {
       productName.textContent = product.name;
       productPrice.textContent = product.price;
       productDescription.textContent = product.description;
+
+      // Alterar o nome da Tag do produto para português
+      if (productTag.textContent.trim() === "mugs") {
+        productTag.textContent = "Canecas";
+      } else {
+        productTag.textContent = "Camisetas";
+      }
     }
   });
 
