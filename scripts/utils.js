@@ -966,7 +966,7 @@ function renderClickedProductOnProductPage(evt) {
     .content.querySelector(".product-info")
     .cloneNode(true);
 
-  // Seleciona imagem, nome e preço dentro da marcação
+  // Seleciona imagem, tag, nome, preço e descrição dentro da marcação
   const productImage = productTemplate.querySelector(".product-info__image");
   const productTag = productTemplate.querySelector(".product-info__tag");
   const productName = productTemplate.querySelector(".product-info__name");
@@ -1017,4 +1017,69 @@ returnButtons.forEach((returnButton) => {
     cartPage.classList.add("content__cart-page_hidden");
     mainPage.classList.remove("content__main-page_hidden");
   });
+});
+
+// Variáveis
+const cartProductContainer = document.querySelector(
+  ".cart__products-container"
+);
+const cartButton = document.querySelector(".header__cart-container");
+
+// Ouvinte para abrir página do carrinho clicando no botão do carrinho
+cartButton.addEventListener("click", () => {
+  mainPage.classList.add("content__main-page_hidden");
+  productPage.classList.add("content__product-page_hidden");
+  cartPage.classList.remove("content__cart-page_hidden");
+});
+
+// Adicionar ao carrinho
+function addToProductToCart() {
+  // Faz cópia da marcação
+  const cartProductTemplate = document
+    .querySelector("#cart__product-container")
+    .content.querySelector(".cart__product-container")
+    .cloneNode(true);
+
+  // Seleciona imagem, nome, descrição e preço dentro da marcação
+  const cartProductImage = cartProductTemplate.querySelector(
+    ".cart__product-image"
+  );
+  const cartProductName = cartProductTemplate.querySelector(
+    ".cart__product-name"
+  );
+  const cartProductPrice =
+    cartProductTemplate.querySelector("#cart__unit-price");
+  const cartProductDescription = cartProductTemplate.querySelector(
+    ".cart__product-description"
+  );
+
+  // Seleciona imagem, nome, descrição e preço dentro da página de produto
+  const productImage = productPageContainer
+    .querySelector(".product-info__image")
+    .getAttribute("src");
+  const productName = productPageContainer.querySelector(
+    ".product-info__name"
+  ).textContent;
+  const productPrice = productPageContainer.querySelector(
+    ".product-info__price"
+  ).textContent;
+  const productDescription = productPageContainer.querySelector(
+    ".product-info__description"
+  ).textContent;
+
+  // Seleciona o produto correto no baseProducts
+
+  cartProductImage.setAttribute("src", productImage);
+  cartProductName.textContent = productName;
+  cartProductPrice.textContent = productPrice;
+  cartProductDescription.textContent = productDescription;
+
+  cartProductContainer.prepend(cartProductTemplate);
+}
+
+// Ouvinte do botão de adicionar ao carrinho
+productPageContainer.addEventListener("click", (evt) => {
+  if (evt.target.classList.contains("product-info__add-to-cart-button")) {
+    addToProductToCart();
+  }
 });
