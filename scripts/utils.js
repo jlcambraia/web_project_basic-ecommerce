@@ -372,6 +372,10 @@ const mainPage = document.querySelector(".content__main-page");
 const productPage = document.querySelector(".content__product-page");
 const cartPage = document.querySelector(".content__cart-page");
 const returnButtons = document.querySelectorAll(".return__button");
+const cartProductContainer = document.querySelector(
+  ".cart__products-container"
+);
+const cartButton = document.querySelector(".header__cart-container");
 
 // Calcula o total de páginas que o site vai ter
 function calculateTotalPages(productsList) {
@@ -692,7 +696,7 @@ document.addEventListener("click", (evt) => {
 });
 
 // Ouvinte para fechar o Popup clicando na tecla em Escape
-document.addEventListener("keydown", (evt) => {
+mainPage.addEventListener("keydown", (evt) => {
   if (
     evt.key === "Escape" &&
     !classifyPopup.classList.contains("filter__classify-popup_hidden")
@@ -1020,12 +1024,6 @@ returnButtons.forEach((returnButton) => {
   });
 });
 
-// Variáveis
-const cartProductContainer = document.querySelector(
-  ".cart__products-container"
-);
-const cartButton = document.querySelector(".header__cart-container");
-
 // Ouvinte para abrir página do carrinho clicando no botão do carrinho
 cartButton.addEventListener("click", () => {
   mainPage.classList.add("content__main-page_hidden");
@@ -1103,5 +1101,56 @@ function hideProductAdded() {
 productPageContainer.addEventListener("click", (evt) => {
   if (evt.target.classList.contains("product-info__add-to-cart-button")) {
     addToProductToCart();
+  }
+});
+
+// Ouvinte para abrir o popup de quantidade
+cartProductContainer.addEventListener("click", (evt) => {
+  if (evt.target.closest(".cart__select-quantity")) {
+    const allQuantityPopups = document.querySelectorAll(
+      ".cart__select-quantity-popup"
+    );
+    allQuantityPopups.forEach((popup) => {
+      popup.classList.add("cart__select-quantity-popup_hidden");
+    });
+
+    const cartQuantityButton = evt.target;
+    const cartQuantityPopup = cartQuantityButton
+      .closest(".cart__select-quantity")
+      .querySelector(".cart__select-quantity-popup");
+    cartQuantityPopup.classList.remove("cart__select-quantity-popup_hidden");
+  }
+});
+
+// Ouvinte para fechar popup de quantidade clicando fora dele
+cartPage.addEventListener("click", (evt) => {
+  if (!evt.target.closest(".cart__select-quantity")) {
+    const cartQuantityPopups = document.querySelectorAll(
+      ".cart__select-quantity-popup"
+    );
+
+    cartQuantityPopups.forEach((popup) => {
+      popup.classList.add("cart__select-quantity-popup_hidden");
+    });
+  }
+});
+
+// Ouvinte para fechar popup de quantidade clicando Esc
+cartPage.addEventListener("keydown", (evt) => {
+  if (evt.key === "Escape") {
+    const cartQuantityPopups = document.querySelectorAll(
+      ".cart__select-quantity-popup"
+    );
+
+    cartQuantityPopups.forEach((popup) => {
+      popup.classList.add("cart__select-quantity-popup_hidden");
+    });
+
+    const quantityPopupButtons = cartPage.querySelectorAll(
+      ".cart__select-quantity-button"
+    );
+    quantityPopupButtons.forEach((button) => {
+      button.blur();
+    });
   }
 });
