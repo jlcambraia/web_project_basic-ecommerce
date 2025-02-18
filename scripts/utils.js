@@ -1186,23 +1186,6 @@ function alreadyHaveProductOnCart() {
   }
 }
 
-// Variáveis
-const totalProductsNumber = document.querySelector(
-  ".cart__total-products-info-number"
-);
-const cartContainerMessage = document.querySelector(
-  ".cart__products-container-message"
-);
-const cartTotalProductsNumber = document.querySelector(
-  ".header__cart-quantity"
-);
-const totalProductsValue = document.querySelector(
-  ".cart__total-products-info-price"
-);
-const totalPurchaseValueOnSummary = document.querySelector(
-  ".cart__subinfo-value"
-);
-
 // Alterar quantidade de produtos na página do carrinho
 function checkIfThereIsAnyProductOnContainer() {
   const productsOnContainer = document.querySelectorAll(
@@ -1288,6 +1271,37 @@ function updatePurchaseValueOnSummary() {
   totalPurchaseValueOnSummary.textContent = totalProductsValue.textContent;
 }
 
+// Variáveis
+const totalProductsNumber = document.querySelector(
+  ".cart__total-products-info-number"
+);
+const cartContainerMessage = document.querySelector(
+  ".cart__products-container-message"
+);
+const cartTotalProductsNumber = document.querySelector(
+  ".header__cart-quantity"
+);
+const totalProductsValue = document.querySelector(
+  ".cart__total-products-info-price"
+);
+const totalPurchaseValueOnSummary =
+  document.querySelector("#subtotal-products");
+
+const totalPurchaseValueWithFreightCosts =
+  document.querySelector("#subtotal-purchase");
+
+const totalFreightCosts = document.querySelector("#subtotal-freight");
+
+// Alterar valor total da compra, incluindo frete, no resumo do pedido
+function updateTotalWithFreightCosts() {
+  totalPurchaseValueWithFreightCosts.textContent =
+    Number(totalPurchaseValueOnSummary.textContent) +
+    Number(totalFreightCosts.textContent);
+}
+
+// Chama a função de atualizar o total do carrinho na abertura do site
+updateTotalWithFreightCosts();
+
 // Ouvinte do botão de adicionar ao carrinho
 productPageContainer.addEventListener("click", (evt) => {
   if (evt.target.classList.contains("product-info__add-to-cart-button")) {
@@ -1299,5 +1313,6 @@ productPageContainer.addEventListener("click", (evt) => {
     changeTotalValueOfProductOnCart();
     changeTotalOfPurchaseOnCartPage();
     updatePurchaseValueOnSummary();
+    updateTotalWithFreightCosts();
   }
 });
