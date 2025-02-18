@@ -34,29 +34,23 @@ Este projeto não será publicado oficialmente, sendo utilizado apenas como exer
 
 ## Planos de Melhoria:
 
-1. Implementação de Paginação Inferior
+1. Implementação de Paginação Inferior: Adicionar um sistema de paginação na parte inferior dos produtos, garantindo melhor navegação para o usuário. Certificar-se de que a paginação está funcionando corretamente em todas as visualizações.
 
-Adicionar um sistema de paginação na parte inferior dos produtos, garantindo melhor navegação para o usuário.
+2. Melhorias de Responsividade: Ajustar a interface para que o conteúdo seja exibido corretamente em diferentes tamanhos de tela, incluindo dispositivos móveis e tablets. Testar a aplicação em múltiplos breakpoints para garantir uma experiência de usuário fluida.
 
-Certificar-se de que a paginação está funcionando corretamente em todas as visualizações.
+3. Aplicação de Programação Orientada a Objetos (POO): Refatorar o código para utilizar classes e objetos, promovendo melhor organização e reutilização de código. Criar classes para os principais componentes da aplicação, como gerenciamento de imagens, sistema de paginação e estrutura de exibição dos dados.
 
-2. Melhorias de Responsividade
+4. Inclusão de "alt" em Todas as Imagens: Adicionar descrições apropriadas para todas as imagens através do atributo alt, garantindo acessibilidade para usuários com deficiência visual.
 
-Ajustar a interface para que o conteúdo seja exibido corretamente em diferentes tamanhos de tela, incluindo dispositivos móveis e tablets.
+5. Remover paginação da busca que não encontrar nenhum resultado.
 
-Testar a aplicação em múltiplos breakpoints para garantir uma experiência de usuário fluida.
+6. Fazer com que, clicar no produto na página do carrinho, leve o cliente para a página do produto.
 
-3. Aplicação de Programação Orientada a Objetos (POO)
+7. Retirar mensagem de filtro não encontrado, ao mudar para outra página.
 
-Refatorar o código para utilizar classes e objetos, promovendo melhor organização e reutilização de código.
+8. Resolver bug da exclusão de produto do carrinho: Após clicar no ícone da lixeira, sair, e clicar em outro produto, ambos estão sendo excluídos. Impedir que isso aconteça.
 
-Criar classes para os principais componentes da aplicação, como gerenciamento de imagens, sistema de paginação e estrutura de exibição dos dados.
-
-4. Inclusão de "alt" em Todas as Imagens
-
-Adicionar descrições apropriadas para todas as imagens através do atributo alt, garantindo acessibilidade para usuários com deficiência visual.
-
-Melhorar o SEO da aplicação com textos descritivos para as imagens.
+9. Implementar funcionalidade de fechar o Popup de exclusão de produtos do carrinho pressionando a tecla Escape ou clicando fora do Popup.
 
 ## Créditos do Projeto:
 
