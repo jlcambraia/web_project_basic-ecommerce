@@ -235,7 +235,9 @@
                   <p class="cart__total-products-info-price">0</p>
                 </div>
                 <div class="cart__products-container">
-                  <p class="cart__products-container-message" >Nenhum produto adicionado ao carrinho</p>
+                  <p class="cart__products-container-message">
+                    Nenhum produto adicionado ao carrinho
+                  </p>
                   <template id="cart__product-container">
                     <div class="cart__product-container">
                       <div class="cart__product-image-container">
@@ -261,59 +263,72 @@
                           <div
                             class="cart__select-quantity-and-total-container"
                           >
-                          <div class="cart__select-quantity">
-                            <button id="quantity-number" class="cart__select-quantity-button">
-                              1
-                            </button>
-                            <img
-                              class="cart__select-quantity-button-icon"
-                              src="./images/cart-arrow-down.svg"
-                              alt="Ícone de seta para baixo"
-                            />
-
+                            <div class="cart__select-quantity">
+                              <button
+                                id="quantity-number"
+                                class="cart__select-quantity-button"
+                              >
+                                1
+                              </button>
+                              <img
+                                class="cart__select-quantity-button-icon"
+                                src="./images/cart-arrow-down.svg"
+                                alt="Ícone de seta para baixo"
+                              />
 
                               <div
                                 class="cart__select-quantity-popup cart__select-quantity-popup_hidden"
                               >
-                                <div class="cart__select-first-quantity-wrapper">
-                                  <button class="cart__select-quantity-popup-button">
-                                    1
-                                    </button><img
+                                <div
+                                  class="cart__select-first-quantity-wrapper"
+                                >
+                                  <button
+                                    class="cart__select-quantity-popup-button"
+                                  >
+                                    1</button
+                                  ><img
                                     class="cart__select-quantity-button-icon"
                                     src="./images/cart-arrow-down.svg"
                                     alt="Ícone de seta para baixo"
                                   />
                                 </div>
 
-                                  <button class="cart__select-quantity-popup-button">
-                                    2
-                                  </button>
-                                  <button class="cart__select-quantity-popup-button">
-                                    3
-                                  </button>
-                                  <button class="cart__select-quantity-popup-button">
-                                    4
-                                  </button>
-                                  <button class="cart__select-quantity-popup-button">
-                                    5
-                                  </button>
-                               </div>
+                                <button
+                                  class="cart__select-quantity-popup-button"
+                                >
+                                  2
+                                </button>
+                                <button
+                                  class="cart__select-quantity-popup-button"
+                                >
+                                  3
+                                </button>
+                                <button
+                                  class="cart__select-quantity-popup-button"
+                                >
+                                  4
+                                </button>
+                                <button
+                                  class="cart__select-quantity-popup-button"
+                                >
+                                  5
+                                </button>
                               </div>
-                              <div class="cart__prices-container">
-                                <div class="cart__price-container">
-                                  <p class="cart__price-text">Preço unitário:</p>
-                                  <p
-                                    id="cart__unit-price"
-                                    class="cart__price"
-                                  ></p>
-                                </div>
-                                <div class="cart__price-container">
-                                  <p class="cart__price-text">Preço total:</p>
-                                  <p
-                                    id="cart__total-price"
-                                    class="cart__price"
-                                  ></p>
-                                </div>
+                            </div>
+                            <div class="cart__prices-container">
+                              <div class="cart__price-container">
+                                <p class="cart__price-text">Preço unitário:</p>
+                                <p
+                                  id="cart__unit-price"
+                                  class="cart__price"
+                                ></p>
+                              </div>
+                              <div class="cart__price-container">
+                                <p class="cart__price-text">Preço total:</p>
+                                <p
+                                  id="cart__total-price"
+                                  class="cart__price"
+                                ></p>
                               </div>
                             </div>
                           </div>
@@ -323,13 +338,12 @@
                   </template>
                 </div>
               </div>
-
               <div class="cart__summary-container">
                 <div class="cart__summary-info">
                   <h2 class="cart__summary-title">Resumo do pedido</h2>
                   <div class="cart__subinfo-container">
                     <p class="cart__subinfo-text">Subtotal de produtos</p>
-                    <p id="subtotal-products"class="cart__subinfo-value">0</p>
+                    <p id="subtotal-products" class="cart__subinfo-value">0</p>
                   </div>
                   <div
                     class="cart__subinfo-container cart__subinfo-container_padding_m"
@@ -343,7 +357,10 @@
                     <p class="cart__subinfo-text cart__subinfo-text_bold">
                       Total
                     </p>
-                    <p id="subtotal-purchase" class="cart__subinfo-value cart__subinfo-value_bold">
+                    <p
+                      id="subtotal-purchase"
+                      class="cart__subinfo-value cart__subinfo-value_bold"
+                    >
                       0
                     </p>
                   </div>
