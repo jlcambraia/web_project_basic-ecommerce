@@ -1098,9 +1098,10 @@ function addProductToCart() {
   cartProductContainer.prepend(cartProductTemplate);
 
   showAddedProductMessage();
+  deleteCards();
 }
 
-// Mostrar imagem de produto adicionado ao carrinho
+// Mostrar mensagem de produto adicionado ao carrinho
 function showAddedProductMessage() {
   const addedProductContainer = document.querySelector(
     ".product-info__add-to-cart-message-container"
@@ -1110,6 +1111,7 @@ function showAddedProductMessage() {
   );
 }
 
+// Esconde mensagem de produto adicionado ao carrinho
 function hideProductAdded() {
   const addedProductContainer = document.querySelector(
     ".product-info__add-to-cart-message-container"
@@ -1171,6 +1173,7 @@ document.addEventListener("keydown", (evt) => {
   }
 });
 
+// Alterar quantidade de produtos na página do carrinho
 function alreadyHaveProductOnCart() {
   const productName = productPageContainer
     .querySelector(".product-info__name")
@@ -1206,7 +1209,7 @@ function alreadyHaveProductOnCart() {
   }
 }
 
-// Alterar quantidade de produtos na página do carrinho
+// Verifica se tem algum produto no carrinho
 function checkIfThereIsAnyProductOnContainer() {
   const productsOnContainer = document.querySelectorAll(
     ".cart__product-container"
@@ -1340,6 +1343,26 @@ function updateQuantityBasedOnPopup() {
   });
 }
 
+// Função para excluir cards
+function deleteCards() {
+  const deleteButtons = document.querySelectorAll(
+    ".cart__product-remove-button"
+  );
+
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const card = button.closest(".cart__product-container");
+      card.remove();
+      checkNumberOfProductsOnCart();
+      changeNumberOfProductsOnCartHeaderIcon();
+      changeTotalValueOfProductOnCart();
+      changeTotalOfPurchaseOnCartPage();
+      updatePurchaseValueOnSummary();
+      updateTotalWithFreightCosts();
+      checkIfThereIsAnyProductOnContainer();
+    });
+  });
+}
 // Ouvinte do botão de adicionar ao carrinho
 productPageContainer.addEventListener("click", (evt) => {
   if (evt.target.classList.contains("product-info__add-to-cart-button")) {
