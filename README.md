@@ -48,6 +48,10 @@ Este projeto não será publicado oficialmente, sendo utilizado apenas como exer
 
 7. Retirar mensagem de filtro não encontrado, ao mudar para outra página.
 
+8. Resolver bug da exclusão de produto do carrinho: Após clicar no ícone da lixeira, sair, e clicar em outro produto, ambos estão sendo excluídos. Impedir que isso aconteça.
+
+9. Implementar funcionalidade de fechar o Popup de exclusão de produtos do carrinho pressionando a tecla Escape ou clicando fora do Popup.
+
 ## Créditos do Projeto:
 
 Projeto baseado no desafio Front-End da Rocketseat: [Clique aqui para acessar](https://github.com/Rocketseat/frontend-challenge)
