@@ -332,3 +332,8 @@
   text-decoration: underline;
   text-transform: uppercase;
 }
+
+.cart__summmary-faq-text:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
