@@ -46,6 +46,8 @@ Este projeto não será publicado oficialmente, sendo utilizado apenas como exer
 
 6. Fazer com que, clicar no produto na página do carrinho, leve o cliente para a página do produto.
 
+7. Retirar mensagem de filtro não encontrado, ao mudar para outra página.
+
 ## Créditos do Projeto:
 
 Projeto baseado no desafio Front-End da Rocketseat: [Clique aqui para acessar](https://github.com/Rocketseat/frontend-challenge)
