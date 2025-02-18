@@ -395,6 +395,16 @@ const totalPurchaseValueWithFreightCosts =
   document.querySelector("#subtotal-purchase");
 
 const totalFreightCosts = document.querySelector("#subtotal-freight");
+const logo = document.querySelector(".header__logo");
+
+// Voltar à página inicial clicando na logo
+function returnToMainPage() {
+  productPage.classList.add("content__product-page_hidden");
+  cartPage.classList.add("content__cart-page_hidden");
+  mainPage.classList.remove("content__main-page_hidden");
+}
+
+logo.addEventListener("click", returnToMainPage);
 
 // Calcula o total de páginas que o site vai ter
 function calculateTotalPages(productsList) {

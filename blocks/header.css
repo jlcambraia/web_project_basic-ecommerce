@@ -22,6 +22,10 @@
   color: #5d5d6d;
 }
 
+.header__logo:hover {
+  cursor: pointer;
+}
+
 .header__actions {
   display: flex;
   justify-content: space-between;
