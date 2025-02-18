@@ -1108,7 +1108,7 @@ function addProductToCart() {
   cartProductContainer.prepend(cartProductTemplate);
 
   showAddedProductMessage();
-  deleteCards();
+  deleteButtonOpenPopup();
 }
 
 // Mostrar mensagem de produto adicionado ao carrinho
@@ -1353,26 +1353,56 @@ function updateQuantityBasedOnPopup() {
   });
 }
 
-// Função para excluir cards
-function deleteCards() {
-  const deleteButtons = document.querySelectorAll(
+const deletePopup = document.querySelector(".content__popup");
+const popupCloseButton = document.querySelector(".content__popup-close-button");
+const popupSubmitButton = document.querySelector(".content__popup-button");
+
+// Função para abrir o popup de excluir produto
+function openDeletePopup() {
+  deletePopup.classList.remove("content__popup_hidden");
+}
+
+// Função para fechar o popuup de excluir produto
+function closeDeletePopup() {
+  deletePopup.classList.add("content__popup_hidden");
+}
+
+// Função para abrir popup de confirmação de exclusão de produto clicando no botão de excluir produto
+function deleteButtonOpenPopup() {
+  // Seleciona todos os botões que existem no container do carrinho
+  const allDeleteButtons = document.querySelectorAll(
     ".cart__product-remove-button"
   );
 
-  deleteButtons.forEach((button) => {
+  // Para cada botão:
+  allDeleteButtons.forEach((button) => {
+    // 1. Passa ouvinte para abrir o popup quando clicado
     button.addEventListener("click", () => {
-      const card = button.closest(".cart__product-container");
-      card.remove();
-      checkNumberOfProductsOnCart();
-      changeNumberOfProductsOnCartHeaderIcon();
-      changeTotalValueOfProductOnCart();
-      changeTotalOfPurchaseOnCartPage();
-      updatePurchaseValueOnSummary();
-      updateTotalWithFreightCosts();
-      checkIfThereIsAnyProductOnContainer();
+      openDeletePopup();
+
+      // 2. Passa o ouvinte do que fazer se clicar no botão de confirmação de exclusão do card
+      popupSubmitButton.addEventListener("click", () => {
+        // 3. Seleciona o card que teve o botão de exclusão clicado
+        const card = button.closest(".cart__product-container");
+        // 4. Remove o card
+        card.remove();
+        // 5. Atualiza o carrinho
+        checkNumberOfProductsOnCart();
+        changeNumberOfProductsOnCartHeaderIcon();
+        changeTotalValueOfProductOnCart();
+        changeTotalOfPurchaseOnCartPage();
+        updatePurchaseValueOnSummary();
+        updateTotalWithFreightCosts();
+        checkIfThereIsAnyProductOnContainer();
+        closeDeletePopup();
+      });
     });
   });
 }
+
+// Ouvinte para fechar popup de confirmação de exclusão de produto clicando no botão de fechar do popup
+popupCloseButton.addEventListener("click", closeDeletePopup);
+
 // Ouvinte do botão de adicionar ao carrinho
 productPageContainer.addEventListener("click", (evt) => {
   if (evt.target.classList.contains("product-info__add-to-cart-button")) {
