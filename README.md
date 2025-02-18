@@ -50,6 +50,8 @@ Este projeto não será publicado oficialmente, sendo utilizado apenas como exer
 
 8. Implementar funcionalidade de fechar o Popup de exclusão de produtos do carrinho pressionando a tecla Escape ou clicando fora do Popup.
 
+9. Melhorar contraste das cores, visando melhorias de SEO.
+
 ## Créditos do Projeto:
 
 Projeto baseado no desafio Front-End da Rocketseat: [Clique aqui para acessar](https://github.com/Rocketseat/frontend-challenge)
