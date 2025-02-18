@@ -1358,45 +1358,54 @@ function updateQuantityBasedOnPopup() {
   });
 }
 
+// Variável para armazenar o botão que acionou a exclusão
+let currentDeleteButton = null;
+
 // Função para abrir o popup de excluir produto
-function openDeletePopup() {
+function openDeletePopup(button) {
+  currentDeleteButton = button; // Armazena o botão de exclusão clicado
   deletePopup.classList.remove("content__popup_hidden");
 }
 
-// Função para fechar o popuup de excluir produto
+// Função para fechar o popup de excluir produto
 function closeDeletePopup() {
   deletePopup.classList.add("content__popup_hidden");
+  popupSubmitButton.removeEventListener("click", handleDelete); // Remove o event listener ao fechar o popup
+}
+
+// Função para a remoção do produto do carrinho
+function handleDelete() {
+  if (currentDeleteButton) {
+    // Seleciona o card correto
+    const card = currentDeleteButton.closest(".cart__product-container");
+    card.remove(); // Remove o card
+
+    // Atualiza o carrinho
+    checkNumberOfProductsOnCart();
+    changeNumberOfProductsOnCartHeaderIcon();
+    changeTotalValueOfProductOnCart();
+    changeTotalOfPurchaseOnCartPage();
+    updatePurchaseValueOnSummary();
+    updateTotalWithFreightCosts();
+    checkIfThereIsAnyProductOnContainer();
+
+    // Fecha o popup após a exclusão
+    closeDeletePopup();
+  }
 }
 
 // Função para abrir popup de confirmação de exclusão de produto clicando no botão de excluir produto
 function deleteButtonOpenPopup() {
-  // Seleciona todos os botões que existem no container do carrinho
   const allDeleteButtons = document.querySelectorAll(
     ".cart__product-remove-button"
   );
 
-  // Para cada botão:
   allDeleteButtons.forEach((button) => {
-    // 1. Passa ouvinte para abrir o popup quando clicado
     button.addEventListener("click", () => {
-      openDeletePopup();
+      openDeletePopup(button); // Passa o botão clicado para referência
 
-      // 2. Passa o ouvinte do que fazer se clicar no botão de confirmação de exclusão do card
-      popupSubmitButton.addEventListener("click", () => {
-        // 3. Seleciona o card que teve o botão de exclusão clicado
-        const card = button.closest(".cart__product-container");
-        // 4. Remove o card
-        card.remove();
-        // 5. Atualiza o carrinho
-        checkNumberOfProductsOnCart();
-        changeNumberOfProductsOnCartHeaderIcon();
-        changeTotalValueOfProductOnCart();
-        changeTotalOfPurchaseOnCartPage();
-        updatePurchaseValueOnSummary();
-        updateTotalWithFreightCosts();
-        checkIfThereIsAnyProductOnContainer();
-        closeDeletePopup();
-      });
+      popupSubmitButton.removeEventListener("click", handleDelete); // Garante que o listener anterior seja removido
+      popupSubmitButton.addEventListener("click", handleDelete); // Adiciona um novo listener apenas uma vez
     });
   });
 }
