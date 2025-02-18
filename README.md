@@ -42,6 +42,10 @@ Este projeto não será publicado oficialmente, sendo utilizado apenas como exer
 
 4. Inclusão de "alt" em Todas as Imagens: Adicionar descrições apropriadas para todas as imagens através do atributo alt, garantindo acessibilidade para usuários com deficiência visual.
 
+5. Remover paginação da busca que não encontrar nenhum resultado.
+
+6. Fazer com que, clicar no produto na página do carrinho, leve o cliente para a página do produto.
+
 ## Créditos do Projeto:
 
 Projeto baseado no desafio Front-End da Rocketseat: [Clique aqui para acessar](https://github.com/Rocketseat/frontend-challenge)
