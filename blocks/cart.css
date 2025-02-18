@@ -200,6 +200,23 @@
   color: #737380;
 }
 
+.cart__select-quantity-popup-button {
+  width: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  background-color: #f3f5f6;
+  color: #737380;
+}
+
+.cart__select-quantity-popup-button:hover {
+  cursor: pointer;
+  font-weight: 600;
+  color: #09090a;
+}
+
 .cart__prices-container {
   display: flex;
   gap: 15px;

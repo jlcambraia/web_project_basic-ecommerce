@@ -376,6 +376,25 @@ const cartProductContainer = document.querySelector(
   ".cart__products-container"
 );
 const cartButton = document.querySelector(".header__cart-container");
+const totalProductsNumber = document.querySelector(
+  ".cart__total-products-info-number"
+);
+const cartContainerMessage = document.querySelector(
+  ".cart__products-container-message"
+);
+const cartTotalProductsNumber = document.querySelector(
+  ".header__cart-quantity"
+);
+const totalProductsValue = document.querySelector(
+  ".cart__total-products-info-price"
+);
+const totalPurchaseValueOnSummary =
+  document.querySelector("#subtotal-products");
+
+const totalPurchaseValueWithFreightCosts =
+  document.querySelector("#subtotal-purchase");
+
+const totalFreightCosts = document.querySelector("#subtotal-freight");
 
 // Calcula o total de páginas que o site vai ter
 function calculateTotalPages(productsList) {
@@ -1116,6 +1135,7 @@ cartProductContainer.addEventListener("click", (evt) => {
       .querySelector(".cart__select-quantity-popup");
     cartQuantityPopup.classList.remove("cart__select-quantity-popup_hidden");
   }
+  updateQuantityBasedOnPopup();
 });
 
 // Ouvinte para fechar popup de quantidade clicando fora dele
@@ -1271,27 +1291,6 @@ function updatePurchaseValueOnSummary() {
   totalPurchaseValueOnSummary.textContent = totalProductsValue.textContent;
 }
 
-// Variáveis
-const totalProductsNumber = document.querySelector(
-  ".cart__total-products-info-number"
-);
-const cartContainerMessage = document.querySelector(
-  ".cart__products-container-message"
-);
-const cartTotalProductsNumber = document.querySelector(
-  ".header__cart-quantity"
-);
-const totalProductsValue = document.querySelector(
-  ".cart__total-products-info-price"
-);
-const totalPurchaseValueOnSummary =
-  document.querySelector("#subtotal-products");
-
-const totalPurchaseValueWithFreightCosts =
-  document.querySelector("#subtotal-purchase");
-
-const totalFreightCosts = document.querySelector("#subtotal-freight");
-
 // Alterar valor total da compra, incluindo frete, no resumo do pedido
 function updateTotalWithFreightCosts() {
   totalPurchaseValueWithFreightCosts.textContent =
@@ -1301,6 +1300,45 @@ function updateTotalWithFreightCosts() {
 
 // Chama a função de atualizar o total do carrinho na abertura do site
 updateTotalWithFreightCosts();
+
+// Altera a quantidade de produtos selecionados conforme número escolhido no popup
+function updateQuantityBasedOnPopup() {
+  const popupNumberButtons = document.querySelectorAll(
+    ".cart__select-quantity-popup-button"
+  );
+
+  popupNumberButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      // Coloquei pois não estava deixando o popup fechar corretamente
+      event.stopPropagation();
+
+      // Encontra o container de quantidade
+      const quantityContainer = button.closest(".cart__select-quantity");
+
+      // Atualiza a quantidade no botão principal
+      const quantityButtonToChange =
+        quantityContainer.querySelector("#quantity-number");
+      if (quantityButtonToChange) {
+        quantityButtonToChange.textContent = button.textContent;
+      }
+
+      // Fecha o popup
+      const popup = quantityContainer.querySelector(
+        ".cart__select-quantity-popup"
+      );
+
+      popup.classList.add("cart__select-quantity-popup_hidden");
+
+      // Chama todas as funções para atualizar os dados do carrinho
+      checkNumberOfProductsOnCart();
+      changeNumberOfProductsOnCartHeaderIcon();
+      changeTotalValueOfProductOnCart();
+      changeTotalOfPurchaseOnCartPage();
+      updatePurchaseValueOnSummary();
+      updateTotalWithFreightCosts();
+    });
+  });
+}
 
 // Ouvinte do botão de adicionar ao carrinho
 productPageContainer.addEventListener("click", (evt) => {
