@@ -34,29 +34,13 @@ Este projeto não será publicado oficialmente, sendo utilizado apenas como exer
 
 ## Planos de Melhoria:
 
-1. Implementação de Paginação Inferior
+1. Implementação de Paginação Inferior: Adicionar um sistema de paginação na parte inferior dos produtos, garantindo melhor navegação para o usuário. Certificar-se de que a paginação está funcionando corretamente em todas as visualizações.
 
-Adicionar um sistema de paginação na parte inferior dos produtos, garantindo melhor navegação para o usuário.
+2. Melhorias de Responsividade: Ajustar a interface para que o conteúdo seja exibido corretamente em diferentes tamanhos de tela, incluindo dispositivos móveis e tablets. Testar a aplicação em múltiplos breakpoints para garantir uma experiência de usuário fluida.
 
-Certificar-se de que a paginação está funcionando corretamente em todas as visualizações.
+3. Aplicação de Programação Orientada a Objetos (POO): Refatorar o código para utilizar classes e objetos, promovendo melhor organização e reutilização de código. Criar classes para os principais componentes da aplicação, como gerenciamento de imagens, sistema de paginação e estrutura de exibição dos dados.
 
-2. Melhorias de Responsividade
-
-Ajustar a interface para que o conteúdo seja exibido corretamente em diferentes tamanhos de tela, incluindo dispositivos móveis e tablets.
-
-Testar a aplicação em múltiplos breakpoints para garantir uma experiência de usuário fluida.
-
-3. Aplicação de Programação Orientada a Objetos (POO)
-
-Refatorar o código para utilizar classes e objetos, promovendo melhor organização e reutilização de código.
-
-Criar classes para os principais componentes da aplicação, como gerenciamento de imagens, sistema de paginação e estrutura de exibição dos dados.
-
-4. Inclusão de "alt" em Todas as Imagens
-
-Adicionar descrições apropriadas para todas as imagens através do atributo alt, garantindo acessibilidade para usuários com deficiência visual.
-
-Melhorar o SEO da aplicação com textos descritivos para as imagens.
+4. Inclusão de "alt" em Todas as Imagens: Adicionar descrições apropriadas para todas as imagens através do atributo alt, garantindo acessibilidade para usuários com deficiência visual.
 
 ## Créditos do Projeto:
 
