@@ -48,9 +48,7 @@ Este projeto não será publicado oficialmente, sendo utilizado apenas como exer
 
 7. Retirar mensagem de filtro não encontrado, ao mudar para outra página.
 
-8. Implementar funcionalidade de fechar o Popup de exclusão de produtos do carrinho pressionando a tecla Escape ou clicando fora do Popup.
-
-9. Melhorar contraste das cores, visando melhorias de SEO.
+8. Melhorar contraste das cores, visando melhorias de SEO.
 
 ## Créditos do Projeto:
 
