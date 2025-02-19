@@ -1413,6 +1413,29 @@ function deleteButtonOpenPopup() {
 // Ouvinte para fechar popup de confirmação de exclusão de produto clicando no botão de fechar do popup
 popupCloseButton.addEventListener("click", closeDeletePopup);
 
+// Ouvinte para fechar popup de confirmação de exclusão de produto clicando fora do popup
+document.addEventListener("click", (evt) => {
+  if (evt.target.classList.contains("content__popup")) {
+    closeDeletePopup();
+  }
+});
+
+// Ouvinte para fechar popup de confirmação de exclusão de produto clicando a tecla Esc
+cartPage.addEventListener("keydown", (evt) => {
+  if (
+    evt.key === "Escape" &&
+    !deletePopup.classList.contains("content__popup_hidden")
+  ) {
+    closeDeletePopup();
+    const deleteButtons = document.querySelectorAll(
+      ".cart__product-remove-button"
+    );
+    deleteButtons.forEach((deleteButton) => {
+      deleteButton.blur();
+    });
+  }
+});
+
 // Ouvinte do botão de adicionar ao carrinho
 productPageContainer.addEventListener("click", (evt) => {
   if (evt.target.classList.contains("product-info__add-to-cart-button")) {
