@@ -1473,6 +1473,19 @@ cartPage.addEventListener("keydown", (evt) => {
   }
 });
 
+// Simular clique no botão
+function buttonClicked() {
+  const addToCartButton = document.querySelector(
+    ".product-info__add-to-cart-button"
+  );
+  addToCartButton.classList.add("product-info__add-to-cart-button_clicked");
+  setTimeout(() => {
+    addToCartButton.classList.remove(
+      "product-info__add-to-cart-button_clicked"
+    );
+  }, 50);
+}
+
 // Ouvinte do botão de adicionar ao carrinho
 productPageContainer.addEventListener("click", (evt) => {
   if (evt.target.classList.contains("product-info__add-to-cart-button")) {
@@ -1486,5 +1499,6 @@ productPageContainer.addEventListener("click", (evt) => {
     changeTotalOfPurchaseOnCartPage();
     updatePurchaseValueOnSummary();
     updateTotalWithFreightCosts();
+    buttonClicked();
   }
 });

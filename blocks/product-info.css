@@ -105,6 +105,10 @@
   opacity: 0.95;
 }
 
+.product-info__add-to-cart-button_clicked {
+  background-color: #093855;
+}
+
 .product-info__add-to-cart-icon {
   width: 24px;
   height: 24px;
