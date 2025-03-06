@@ -870,6 +870,7 @@ form.addEventListener("submit", (evt) => {
     allCards.forEach((card) => {
       card.remove();
     });
+    renderPagination(0); // Retira a paginação
     return; // Caso não haja produtos, sai sem renderizar produtos
   }
 
