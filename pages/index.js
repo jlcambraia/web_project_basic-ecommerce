@@ -1147,6 +1147,32 @@ function hideProductAdded() {
   );
 }
 
+// Caso já tenham 5 itens deste produto no carrinho, mostrar a mensagem de que já existem 5 produtos no carrinho
+function alreadyHaveFiveProductsInCart() {
+  const productName = productPageContainer
+    .querySelector(".product-info__name")
+    .textContent.trim();
+
+  // Encontra o produto correto no carrinho
+  const productOnCart = Array.from(
+    cartProductContainer.querySelectorAll(".cart__product-container")
+  ).find(
+    (product) =>
+      product.querySelector(".cart__product-name").textContent.trim() ===
+      productName
+  );
+
+  // Se não encontrar, não faz nada
+  if (!productOnCart) return;
+
+  const productQuantity = productOnCart.querySelector("#quantity-number");
+
+  // Verifica limite máximo (defini aleatoriamente 5 produtos)
+  if (Number(productQuantity.textContent) === 5) {
+    showAddedProductMessage();
+  }
+}
+
 // Ouvinte para abrir o popup de quantidade
 cartProductContainer.addEventListener("click", (evt) => {
   if (evt.target.closest(".cart__select-quantity")) {
@@ -1451,6 +1477,7 @@ cartPage.addEventListener("keydown", (evt) => {
 productPageContainer.addEventListener("click", (evt) => {
   if (evt.target.classList.contains("product-info__add-to-cart-button")) {
     alreadyHaveProductOnCart();
+    alreadyHaveFiveProductsInCart();
     addProductToCart();
     checkIfThereIsAnyProductOnContainer();
     checkNumberOfProductsOnCart();
