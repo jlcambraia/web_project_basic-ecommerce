@@ -626,7 +626,10 @@ function renderProductsBasedOnRightArrowButton() {
 
 // Ouvinte para o botão de filtro de Canecas
 mugsButton.addEventListener("click", (evt) => {
-  if (gridMessage.textContent.includes("busca")) {
+  if (
+    gridMessage.textContent.includes("busca") ||
+    gridMessage.textContent.includes("Não")
+  ) {
     // Retira qualquer filtro que existir
     clearFilter();
     // Retira a mensagem de pesquisa
@@ -646,7 +649,10 @@ mugsButton.addEventListener("click", (evt) => {
 
 // Ouvinte para o botão de filtro de Camisetas
 tshirtsButton.addEventListener("click", (evt) => {
-  if (gridMessage.textContent.includes("busca")) {
+  if (
+    gridMessage.textContent.includes("busca") ||
+    gridMessage.textContent.includes("Não")
+  ) {
     // Retira qualquer filtro que existir
     clearFilter();
     // Retira a mensagem de pesquisa
@@ -666,7 +672,10 @@ tshirtsButton.addEventListener("click", (evt) => {
 
 // Ouvinte para o botão de filtro para Todos os Produtos
 allProductsButton.addEventListener("click", (evt) => {
-  if (gridMessage.textContent.includes("busca")) {
+  if (
+    gridMessage.textContent.includes("busca") ||
+    gridMessage.textContent.includes("Não")
+  ) {
     // Retira qualquer filtro que existir
     clearFilter();
     // Retira a mensagem de pesquisa
@@ -920,6 +929,7 @@ searchIcon.addEventListener("click", () => {
     allCards.forEach((card) => {
       card.remove();
     });
+    renderPagination(0); // Retira a paginação
     return; // Caso não haja produtos, sai sem renderizar produtos
   }
 
