@@ -42,13 +42,9 @@ Este projeto não será publicado oficialmente, sendo utilizado apenas como exer
 
 4. Inclusão de "alt" em Todas as Imagens: Adicionar descrições apropriadas para todas as imagens através do atributo alt, garantindo acessibilidade para usuários com deficiência visual.
 
-5. Remover paginação da busca que não encontrar nenhum resultado.
+5. Fazer com que, clicar no produto na página do carrinho, leve o cliente para a página do produto.
 
-6. Fazer com que, clicar no produto na página do carrinho, leve o cliente para a página do produto.
-
-7. Retirar mensagem de filtro não encontrado, ao mudar para outra página.
-
-8. Melhorar contraste das cores, visando melhorias de SEO.
+6. Melhorar contraste das cores, visando melhorias de SEO.
 
 ## Créditos do Projeto:
 
