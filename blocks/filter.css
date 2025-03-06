@@ -139,3 +139,10 @@
     height: 180px;
   }
 }
+
+@media screen and (max-width: 388px) {
+  .filter__by-products {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
