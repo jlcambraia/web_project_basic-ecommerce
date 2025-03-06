@@ -49,3 +49,23 @@
   margin-left: 8px;
   width: 68px;
 }
+
+@media screen and (max-width: 621px) {
+  .pagination {
+    justify-content: center;
+  }
+
+  .pagination__container {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .pagination {
+    justify-content: center;
+  }
+
+  .pagination__container {
+    justify-content: center;
+  }
+}

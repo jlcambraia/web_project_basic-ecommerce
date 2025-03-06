@@ -98,3 +98,49 @@
   font-weight: 600;
   color: #41414d;
 }
+
+@media screen and (max-width: 941px) {
+  .filter__by-products {
+    width: 380px;
+  }
+}
+
+@media screen and (max-width: 594px) {
+  .filter__by-products {
+    width: 355px;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .filter {
+    height: 120px;
+  }
+
+  .filter__by-products-and-classify {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .filter__by-products {
+    width: 355px;
+  }
+
+  .filter__classify-popup {
+    left: -50px;
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .filter {
+    height: 180px;
+  }
+  .filter__by-products {
+    flex-direction: column;
+
+    gap: 10px;
+  }
+}

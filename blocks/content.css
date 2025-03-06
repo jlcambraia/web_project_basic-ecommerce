@@ -94,3 +94,19 @@
   cursor: pointer;
   opacity: 0.8;
 }
+
+@media screen and (max-width: 1261px) {
+  .content__container {
+    width: 90%;
+    max-width: 832px;
+    min-height: 81.87vh;
+  }
+}
+
+@media screen and (max-width: 941px) {
+  .content__container {
+    width: 90%;
+    max-width: 544px;
+    min-height: 81.87vh;
+  }
+}
