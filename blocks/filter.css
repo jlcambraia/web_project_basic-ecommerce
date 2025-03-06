@@ -139,8 +139,6 @@
     height: 180px;
   }
   .filter__by-products {
-    flex-direction: column;
-
     gap: 10px;
   }
 }
