@@ -114,6 +114,12 @@
   }
 }
 
+@media screen and (max-width: 619px) {
+  .grid__card {
+    width: 80%;
+  }
+}
+
 @media screen and (max-width: 570px) {
   .grid__container {
     justify-content: center;
