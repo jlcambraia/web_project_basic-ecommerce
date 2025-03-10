@@ -38,6 +38,7 @@
   align-items: center;
   justify-content: flex-end;
   gap: 8px;
+  background-color: #f0f0f5;
 }
 
 .grid__message-button:hover {
@@ -99,10 +100,31 @@
   .grid__container {
     justify-content: center;
   }
+
+  .grid__message-container {
+    justify-content: center;
+  }
+
+  .grid__message {
+    font-size: 14px;
+  }
+
+  .grid__message-button {
+    font-size: 12px;
+  }
 }
 
 @media screen and (max-width: 570px) {
   .grid__container {
     justify-content: center;
+  }
+
+  .grid__message-container {
+    flex-direction: column;
+  }
+
+  .grid__message {
+    margin: 0 0 5px 0;
+    text-align: center;
   }
 }
