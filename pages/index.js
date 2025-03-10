@@ -3,7 +3,7 @@ const baseProducts = [
   {
     name: "Caneca de cerâmica rústica",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/caneca1.jpg",
     price: 40,
     category: "mugs",
@@ -11,7 +11,7 @@ const baseProducts = [
   {
     name: "Camiseta not today.",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/camisa1.jpg",
     price: 78,
     category: "t-shirts",
@@ -19,7 +19,7 @@ const baseProducts = [
   {
     name: "Caneca Black Ring",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/caneca2.jpg",
     price: 32,
     category: "mugs",
@@ -27,7 +27,7 @@ const baseProducts = [
   {
     name: "Camiseta Broken Saints",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/camisa2.jpg",
     price: 58,
     category: "t-shirts",
@@ -35,7 +35,7 @@ const baseProducts = [
   {
     name: "Camiseta Outcast",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/camisa3.jpg",
     price: 89,
     category: "t-shirts",
@@ -43,7 +43,7 @@ const baseProducts = [
   {
     name: "Caneca The Grounds",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/caneca3.jpg",
     price: 85,
     category: "mugs",
@@ -51,7 +51,7 @@ const baseProducts = [
   {
     name: "Camiseta evening",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/camisa4.jpg",
     price: 69,
     category: "t-shirts",
@@ -59,7 +59,7 @@ const baseProducts = [
   {
     name: "Caneca preto fosco",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/caneca4.jpg",
     price: 28,
     category: "mugs",
@@ -67,7 +67,7 @@ const baseProducts = [
   {
     name: "Caneca Never settle",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/caneca5.jpg",
     price: 43,
     category: "mugs",
@@ -75,7 +75,7 @@ const baseProducts = [
   {
     name: "Camiseta DREAMER",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/camisa5.jpg",
     price: 55,
     category: "t-shirts",
@@ -83,7 +83,7 @@ const baseProducts = [
   {
     name: "Caneca Decaf! P&Co",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/caneca6.jpg",
     price: 32,
     category: "mugs",
@@ -91,7 +91,7 @@ const baseProducts = [
   {
     name: "Camiseta Ramones",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/camisa6.jpg",
     price: 92,
     category: "t-shirts",
@@ -102,7 +102,7 @@ const baseProducts = [
   {
     name: "Caneca Decaf! P&Co",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/caneca6.jpg",
     price: 32,
     category: "mugs",
@@ -111,7 +111,7 @@ const baseProducts = [
   {
     name: "Caneca Never settle",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/caneca5.jpg",
     price: 43,
     category: "mugs",
@@ -119,7 +119,7 @@ const baseProducts = [
   {
     name: "Caneca preto fosco",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/caneca4.jpg",
     price: 28,
     category: "mugs",
@@ -127,7 +127,7 @@ const baseProducts = [
   {
     name: "Camiseta Ramones",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/camisa6.jpg",
     price: 92,
     category: "t-shirts",
@@ -135,7 +135,7 @@ const baseProducts = [
   {
     name: "Camiseta evening",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/camisa4.jpg",
     price: 69,
     category: "t-shirts",
@@ -143,7 +143,7 @@ const baseProducts = [
   {
     name: "Caneca The Grounds",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/caneca3.jpg",
     price: 85,
     category: "mugs",
@@ -151,7 +151,7 @@ const baseProducts = [
   {
     name: "Camiseta Outcast",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/camisa3.jpg",
     price: 89,
     category: "t-shirts",
@@ -159,7 +159,7 @@ const baseProducts = [
   {
     name: "Camiseta DREAMER",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/camisa5.jpg",
     price: 55,
     category: "t-shirts",
@@ -167,7 +167,7 @@ const baseProducts = [
   {
     name: "Camiseta Broken Saints",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/camisa2.jpg",
     price: 58,
     category: "t-shirts",
@@ -175,7 +175,7 @@ const baseProducts = [
   {
     name: "Caneca Black Ring",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/caneca2.jpg",
     price: 32,
     category: "mugs",
@@ -183,7 +183,7 @@ const baseProducts = [
   {
     name: "Camiseta not today.",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/camisa1.jpg",
     price: 78,
     category: "t-shirts",
@@ -192,7 +192,7 @@ const baseProducts = [
   {
     name: "Caneca de cerâmica rústica",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/caneca1.jpg",
     price: 40,
     category: "mugs",
@@ -203,7 +203,7 @@ const baseProducts = [
   {
     name: "Camiseta evening",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/camisa4.jpg",
     price: 69,
     category: "t-shirts",
@@ -212,7 +212,7 @@ const baseProducts = [
   {
     name: "Caneca Black Ring",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/caneca2.jpg",
     price: 32,
     category: "mugs",
@@ -221,7 +221,7 @@ const baseProducts = [
   {
     name: "Caneca The Grounds",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/caneca3.jpg",
     price: 85,
     category: "mugs",
@@ -230,7 +230,7 @@ const baseProducts = [
   {
     name: "Camiseta Broken Saints",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/camisa2.jpg",
     price: 58,
     category: "t-shirts",
@@ -239,7 +239,7 @@ const baseProducts = [
   {
     name: "Caneca preto fosco",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/caneca4.jpg",
     price: 28,
     category: "mugs",
@@ -248,7 +248,7 @@ const baseProducts = [
   {
     name: "Caneca de cerâmica rústica",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/caneca1.jpg",
     price: 40,
     category: "mugs",
@@ -256,7 +256,7 @@ const baseProducts = [
   {
     name: "Caneca Never settle",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/caneca5.jpg",
     price: 43,
     category: "mugs",
@@ -264,7 +264,7 @@ const baseProducts = [
   {
     name: "Camiseta Ramones",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/camisa6.jpg",
     price: 92,
     category: "t-shirts",
@@ -272,7 +272,7 @@ const baseProducts = [
   {
     name: "Camiseta DREAMER",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/camisa5.jpg",
     price: 55,
     category: "t-shirts",
@@ -280,7 +280,7 @@ const baseProducts = [
   {
     name: "Camiseta Outcast",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/camisa3.jpg",
     price: 89,
     category: "t-shirts",
@@ -289,7 +289,7 @@ const baseProducts = [
   {
     name: "Caneca Decaf! P&Co",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/caneca6.jpg",
     price: 32,
     category: "mugs",
@@ -298,7 +298,7 @@ const baseProducts = [
   {
     name: "Camiseta not today.",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/camisa1.jpg",
     price: 78,
     category: "t-shirts",
@@ -309,7 +309,7 @@ const baseProducts = [
   {
     name: "Caneca The Grounds",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/caneca3.jpg",
     price: 85,
     category: "mugs",
@@ -318,7 +318,7 @@ const baseProducts = [
   {
     name: "Camiseta Broken Saints",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/camisa2.jpg",
     price: 58,
     category: "t-shirts",
@@ -326,7 +326,7 @@ const baseProducts = [
   {
     name: "Caneca Never settle",
     description:
-      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo, descrevendo tal produto.",
+      "Aqui vem um texto descritivo do produto, esta caixa de texto servirá apenas de exemplo para que simule algum texto que venha a ser inserido nesse campo.",
     image_src: "./images/caneca5.jpg",
     price: 43,
     category: "mugs",
@@ -338,7 +338,7 @@ const baseProducts = [
 // Cria cópia produnda de lista de produtos que vai alterar conforme clique nos botões do filtro
 let productsThatCanChange = [...baseProducts];
 
-// Variáveis
+// ------------------------------------------ Início das Variáveis ------------------------------------------ //
 const gridContainer = document.querySelector(".grid__container");
 const paginationTypeNumberContainer = document.querySelector(
   ".pagination__button-type-number-container"
@@ -400,7 +400,7 @@ const deletePopup = document.querySelector(".content__popup");
 const popupCloseButton = document.querySelector(".content__popup-close-button");
 const popupSubmitButton = document.querySelector(".content__popup-button");
 
-// Fim das Variáveis
+// ------------------------------------------ Fim das Variáveis ------------------------------------------ //
 
 // Voltar à página inicial clicando na logo
 function returnToMainPage() {
