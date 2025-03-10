@@ -110,3 +110,9 @@
     min-height: 81.87vh;
   }
 }
+
+@media screen and (max-width: 569px) {
+  .content__popup-container {
+    width: 90%;
+  }
+}
