@@ -1502,3 +1502,17 @@ productPageContainer.addEventListener("click", (evt) => {
     buttonClicked();
   }
 });
+
+// Impedir zoom com 2 cliques no site
+let lastTouchTime = 0;
+document.addEventListener(
+  "touchend",
+  function (event) {
+    let now = new Date().getTime();
+    if (now - lastTouchTime <= 300) {
+      event.preventDefault(); // Impede o zoom por duplo toque
+    }
+    lastTouchTime = now;
+  },
+  { passive: false }
+);
